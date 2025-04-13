@@ -1,1 +1,1 @@
-# NetMD
+Molecular dynamics (MD) simulations are crucial for examining the structural and dynamic properties of biological systems. However, comparing multiple MD trajectories to identify common molecular patterns is challenging due to temporal misalignments. We present NAME, a computational method that synchronizes MD trajectories using graph-embedding and dynamic time-warping techniques. NAME allows researchers to better understand complex molecular interactions, revealing previously unidentified patterns and advancing fields from drug discovery to materials science.

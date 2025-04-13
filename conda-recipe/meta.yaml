@@ -1,0 +1,55 @@
+{% set data = load_setup_py_data(setup_file='../setup.py', from_recipe_dir=True) %}
+
+package:
+  name: netmd
+  version: {{ data.get('version') }}
+
+#app:
+#  icon: icon_64x64.png
+  
+source:
+  git_url: https://github.com/mazzalab/netmd.git
+
+build:
+  # number: {{ environ.get('GITHUB_RUN_NUMBER', 0) }}
+  number: 0
+  entry_points:
+    - netmd = netmd.main:main
+ 
+requirements:
+  build:
+    - python {{ data.get('python_requires').replace('>=', '').replace('==', '') }}
+    - git
+    - pip
+    - pytest-runner
+  run:
+    - python  {{ data.get('python_requires').replace('>=', '').replace('==', '') }}
+    - matplotlib
+    - tslearn
+    - numpy >=1.22
+    - networkx >=3.3
+    - decorator ==5.1.*
+    - pandas >=1.2.0
+    - gensim >=4.0.0
+    - tqdm
+    - python-louvain
+    - scikit-learn
+    - scipy <1.13
+    - pygsp
+    - six
+    - python-Levenshtein
+
+test:
+  imports:
+    - netmd
+  commands:
+    - python -c "import netmd; print(netmd.__file__)"
+    - netmd -h
+  requires:
+    - pytest
+    
+about:
+  home: https://github.com/mazzalab/netmd
+  summary: DESCRIPTION of NETMD HERE!!
+  license: MIT
+  license_file: LICENSE

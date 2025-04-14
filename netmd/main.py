@@ -1,7 +1,7 @@
-from embeddings import g2v_fit_transform, entropy_filter, dim_reduction, iterative_pruning, dtw_mapping
-from dataLoader import crawl_replica_files, iterate_replica_files, parse_config
-from clustering import compute_dtwmatrix, hierarchical_clustering_rank
-from plotUtils import plot_emb_rep, plot_emb_bary, plot_pruning
+from .embeddings import g2v_fit_transform, entropy_filter, dim_reduction, iterative_pruning, dtw_mapping
+from .dataLoader import crawl_replica_files, iterate_replica_files, parse_config
+from .clustering import compute_dtwmatrix, hierarchical_clustering_rank
+from .plotUtils import plot_emb_rep, plot_emb_bary, plot_pruning
 
 from tslearn.barycenters import dtw_barycenter_averaging
 from colorama import Fore, Style
@@ -247,13 +247,11 @@ def main(args: argparse.Namespace) -> None:
 	# End phase 2
 
 
+def cli():
+    parser = create_parser()
+    args = parser.parse_args()
+    main(args)
+
+
 if __name__ == '__main__':
-
-	# build the parser
-	parser = create_parser()
-	
-	# parse arguments
-	args = parser.parse_args()
-
-	# call main function
-	main(args)
+    cli()

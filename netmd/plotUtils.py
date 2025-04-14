@@ -1,17 +1,17 @@
-from typing import List
-import matplotlib.pyplot  as plt
-import pandas as pd
-import numpy as np
-import os
+from .embeddings import iterative_dim_reduction
 
 from scipy.cluster.hierarchy import dendrogram
-from embeddings import iterative_dim_reduction
 import matplotlib.colors as mcolors
+import matplotlib.pyplot as plt
 import matplotlib.cm as cmx
 from matplotlib.collections import LineCollection
 from tqdm import tqdm
+from typing import List
 import numpy as np
+import pandas as pd
 import math
+import os
+
 
 def plot_emb_rep(emb_subg: np.ndarray, meta_data: pd.DataFrame, out_path: str, plot_format: str):
     """
@@ -160,6 +160,7 @@ def plot_emb_bary_points(ax: plt.Axes, emb_data: np.ndarray, meta_data: pd.DataF
     ax.legend()
 
     return
+
 
 def plot_emb_bary_line(ax: plt.Axes, emb_data: np.ndarray, meta_data: pd.DataFrame):
     """
@@ -333,8 +334,8 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
 
     return
 
-def plot_dendogram(linkage_matrix: np.ndarray, cut_distance_elbow: int, replica_names, out_path: str, plot_format: str):
 
+def plot_dendogram(linkage_matrix: np.ndarray, cut_distance_elbow: int, replica_names, out_path: str, plot_format: str):
     # Plot dendrogram with cut line
     _, ax = plt.subplots(figsize=(12, 8))
     threshold = linkage_matrix[cut_distance_elbow, 2]

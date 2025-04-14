@@ -1,5 +1,5 @@
 
-from plotUtils import plot_dendogram
+from .plotUtils import plot_dendogram
 
 from scipy.cluster.hierarchy import linkage, fcluster
 from scipy.spatial.distance import squareform

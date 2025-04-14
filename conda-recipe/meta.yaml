@@ -8,13 +8,14 @@ package:
 #  icon: icon_64x64.png
   
 source:
-  git_url: https://github.com/mazzalab/netmd.git
+  # git_url: https://github.com/mazzalab/netmd.git
+  path: ..
 
 build:
   # number: {{ environ.get('GITHUB_RUN_NUMBER', 0) }}
   number: 0
   entry_points:
-    - netmd = netmd.main:main
+    - netmd = netmd.main:cli
  
 requirements:
   build:
@@ -38,12 +39,13 @@ requirements:
     - pygsp
     - six
     - python-Levenshtein
+    - pyyaml
+    - h5py  # optional
 
 test:
   imports:
     - netmd
   commands:
-    - python -c "import netmd; print(netmd.__file__)"
     - netmd -h
   requires:
     - pytest

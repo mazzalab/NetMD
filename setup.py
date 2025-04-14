@@ -36,7 +36,7 @@ setup(
     license="MIT",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    entry_points={"console_scripts": ["netmd = netmd.main:main"]},
+    entry_points={"console_scripts": ["netmd = netmd.main:cli"]},
     install_requires=["setuptools"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",

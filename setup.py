@@ -3,7 +3,7 @@ import re
 
 try:
     from importlib import util
-except:
+except Exception:
     sys.stdout.write("\nIt seems that importlib library is not available on this machine. Please install pip (e.g. for Ubuntu, run 'sudo apt-get install python3-pip'.\n")
     sys.exit()
 
@@ -21,11 +21,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 # Set the software version number
-VERSION = "1.0.0"
+VERSION = '1.0.0'
 assert re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", VERSION), "Invalid version number"
 
 setup(
-    name="netmd",
+    name='netmd',
     version=VERSION,
     author="Manuel Mangoni, Michele Pieroni",
 #    author_email="bioinformatics@css-mendel.it",

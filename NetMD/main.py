@@ -3,7 +3,6 @@ from dataLoader import crawl_replica_files, iterate_replica_files, parse_config
 from clustering import compute_dtwmatrix, hierarchical_clustering_rank
 from plotUtils import plot_emb_rep, plot_emb_bary, plot_pruning
 
-
 from tslearn.barycenters import dtw_barycenter_averaging
 from colorama import Fore, Style
 

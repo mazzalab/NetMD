@@ -50,6 +50,6 @@ test:
     
 about:
   home: https://github.com/mazzalab/netmd
-  summary: DESCRIPTION of NETMD HERE!!
+  summary: SHORT DESCRIPTION of NETMD HERE!!
   license: MIT
   license_file: LICENSE

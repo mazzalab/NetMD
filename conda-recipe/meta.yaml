@@ -40,7 +40,8 @@ requirements:
     - six
     - python-Levenshtein
     - pyyaml
-    - h5py  # optional
+    - h5py
+    - hdf5
 
 test:
   imports:

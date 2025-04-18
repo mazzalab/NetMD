@@ -23,6 +23,8 @@ requirements:
     - git
     - pip
     - pytest-runner
+    - h5py
+    - hdf5
   run:
     - python  {{ data.get('python_requires').replace('>=', '').replace('==', '') }}
     - matplotlib

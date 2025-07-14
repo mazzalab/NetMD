@@ -20,6 +20,8 @@ release = '1.0.0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.duration',
+    'sphinx_copybutton',
+    "sphinx_inline_tabs",
 ]
 
 templates_path = ['_templates']
@@ -37,3 +39,15 @@ html_theme = 'furo'
 
 #html_theme = 'alabaster'
 html_static_path = ['_static']
+
+html_title = "NetMD Documentation"
+html_favicon = '_static/img/favicon.ico'
+html_scaled_image_link = False
+
+html_theme_options = {
+    "light_logo": "/img/netmd_logo_def.png",
+    "dark_logo": "/img/netmd_logo_def.png",
+}
+
+def setup(app):
+    app.add_css_file('custom.css')

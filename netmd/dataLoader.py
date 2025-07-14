@@ -178,7 +178,7 @@ def load_data(contacts_data: pd.DataFrame, features_data: pd.DataFrame, name: st
     res2 = set(contacts_data['Res2'].unique())
     all_res = res1.union(res2)
 
-    contacts_df = contacts_data.groupby('Frame').apply(lambda df : (df[['Res1', 'Res2']] - min_res).apply(tuple, axis =1).values)#, include_groups=False) 
+    contacts_df = contacts_data.groupby('Frame').apply(lambda df : (df[['Res1', 'Res2']] - min_res).apply(tuple, axis =1).values, include_groups=False) 
 
     graphs = [] 
 
@@ -196,11 +196,6 @@ def load_data(contacts_data: pd.DataFrame, features_data: pd.DataFrame, name: st
         G = nx.convert_node_labels_to_integers(G, first_label=0, ordering='default')
 
         graphs.append(G)
-        
-        # numeric_indices = [index for index in range(G.number_of_nodes())]
-        # node_indices = sorted([node for node in G.nodes()])
-        # assert numeric_indices == node_indices, f"ASSERT IN GRAPH CREATION:\nindex: {i};\n nodes: {G.nodes(data=True)};\n edges:{G.edges()};\n"
-    
     
     # Create a DataFrame for the replica and frame
     frame_list = list(contacts_df.index)  # List of frames
@@ -276,35 +271,6 @@ def crawl_replica_files(crawl_path: str, file_prefix: str, features_data: pd.Dat
     return glb_graph_list, glb_metadata_df, glb_entropy_df
 
 
-
-# Quello giusto è quello sotto
-# def iterate_replica_files(file_list: list[str], features_data: pd.DataFrame, verbose: bool) -> Tuple[List[nx.Graph], pd.DataFrame, pd.DataFrame]: # type: ignore
-    
-#     glb_graph_list = []
-#     glb_entropy_df = pd.DataFrame()
-#     glb_metadata_df = pd.DataFrame()
-
-#     for file in file_list:
-
-#         replica_data = pd.read_csv(file, sep='\t')
-#         replica_data[["Res1", "Res2"]] = replica_data[["Res1", "Res2"]] - 1
-        
-#         if verbose: 
-#             print(f"\nLoading data from {file}")
-#             print(f'\n{replica_data}\n')
-
-#         replica_name = os.path.basename(file)
-
-#         graph_list, metadata_df, entropy = load_data(replica_data, features_data, replica_name)
-
-#         glb_graph_list += graph_list
-#         glb_entropy_df = pd.concat([glb_entropy_df, entropy], axis=1)
-#         glb_metadata_df = pd.concat([glb_metadata_df, metadata_df])
-
-#     glb_entropy_df.fillna(0., axis=1, inplace=True)
-
-#     return glb_graph_list, glb_metadata_df, glb_entropy_df
-
 def iterate_replica_files(file_list: list[str], features_data: pd.DataFrame, verbose: bool) -> Tuple[List[nx.Graph], pd.DataFrame, pd.DataFrame]: # type: ignore
     '''
     Iterates through the listed files, processes each file, and loads the resulting data.
@@ -345,57 +311,3 @@ def iterate_replica_files(file_list: list[str], features_data: pd.DataFrame, ver
     glb_entropy_df.fillna(0., axis=1, inplace=True)
 
     return glb_graph_list, glb_metadata_df, glb_entropy_df
-
-
-
-
-# Merge 2 raw files into one
-# INTERNAL FUNCTION 
-# def join_contacts(crawl_path):
-#     """
-#     Recursively explores a directory 
-#     """
-
-#     for item in os.listdir(crawl_path):
-
-#         item_path = os.path.join(crawl_path, item)
-
-#         if os.path.isdir(item_path):
-#             join_contacts(item_path)  
-
-#         else:
-
-#             replica = "Joined_Replica_" + item[6:10] +".tsv"
-#             joined_path = os.path.join(crawl_path, replica)
-            
-#             # Now join all files
-#             joined_lines = []
-#             last_frame = 0
-            
-#             for filename in sorted(os.listdir(crawl_path)):
-#                 if filename.startswith("Rep"): break
-
-#                 print(f"Reading: {os.path.join(crawl_path, filename)}")
-#                 print(f"Last frame: {last_frame}")
-#                 with open(os.path.join(crawl_path, filename),'r') as file:
-#                     for i, line in enumerate(file.readlines()):
-                        
-#                         if line.startswith('#') or line.startswith('\n'): continue
-                        
-#                         row = line.split('\t')
-#                         row[0] = str( last_frame + int(row[0]) )
-#                         joined_lines.append(str.join('\t', row))
-
-#                 with open(os.path.join(crawl_path, filename),'r') as file:
-#                     last_frame = int(file.readlines()[-2].split('\t')[0]) + 1
-
-#             with open(joined_path, 'w') as outfile:
-#                 for line in joined_lines:
-#                     outfile.write(line)
-#                 outfile.write('\n')
-            
-#             break
-
-
-#     return
-# join_contacts('./data')

@@ -9,7 +9,6 @@ from colorama import Fore, Style
 import pandas as pd
 import numpy as np
 import argparse
-import copy
 import os
 
 import pickle as pk
@@ -155,6 +154,13 @@ def main(args: argparse.Namespace) -> None:
 
 	if args.verbose:
 		print("\nFiltering...\n")
+
+	# Save the graphs, metadata, and entropies to files
+	with  open(os.path.join(out_path, 'graphs.pkl'), 'wb') as f:
+		pk.dump(graphs, f)
+
+	entropies.to_csv(os.path.join(out_path, 'entropies.tsv'), sep='\t', index=False)
+
 	# Filter the graphs based on the entropy threshold
 	subgraphs = entropy_filter(graphs, entropies, args.edgeFilter)
 	with  open(os.path.join(out_path, 'subgraphs.pkl'), 'wb') as f:
@@ -165,19 +171,28 @@ def main(args: argparse.Namespace) -> None:
 	if args.verbose:
 		print(f"Starting Graph2Vec{g2v_config}")
 
-	# Run Grap2Vec 
+
+	### Run Grap2Vec ###
+
+	# Shuffle the data and metadata
+	meta_data.reset_index(drop=True, inplace=True)
+	meta_data = meta_data.sample(frac=1, random_state=42)
+	subgraphs = [subgraphs[i] for i in meta_data.index]
+
 	subgraphs_emb = g2v_fit_transform(g2v_config, subgraphs)
 
+	# Reorder the embeddings to match the original graphs
+	meta_data = meta_data.reset_index(drop=True).sort_values(['Rep', 'Frame'])
 
-	# Buil python dict to store replica_name -> replica_embedding
-	# replicas_ts = {replica: subgraphs_emb[meta_data['Rep'] == replica].flatten() for replica in meta_data['Rep'].unique()}
-	# replicas_ts = pd.DataFrame.from_dict(replicas_ts, orient='index')
-	# replicas_ts.to_csv(os.path.join(out_path, 'subgraphs_emb.tsv'), sep='\t', index=False)
+	subgraphs_emb = subgraphs_emb[meta_data.index]
+
+
 
 	###### Barycenter computation ######
 
 	# Reshape the data to shape (replica, frames, G2V emb dim)
 	replicas_ts = [subgraphs_emb[meta_data['Rep'] == replica] for replica in meta_data['Rep'].unique()]
+	
 	# Save subgraphs to file
 	with open(os.path.join(out_path, 'subgraphs_emb.pkl'), 'wb') as f:
 		pk.dump(replicas_ts, f)

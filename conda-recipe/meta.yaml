@@ -39,11 +39,16 @@ requirements:
     - scikit-learn
     - scipy <1.13
     - pygsp
-    - six
     - python-Levenshtein
     - pyyaml
     - h5py
     - hdf5
+    - colorama
+    - plotly
+    - nbformat>=4.2.0
+    - ruptures
+    - ipykernel
+
 
 test:
   imports:
@@ -55,6 +60,6 @@ test:
     
 about:
   home: https://github.com/mazzalab/netmd
-  summary: SHORT DESCRIPTION of NETMD HERE!!
+  summary: "NetMD is a computational method that synchronizes molecular dynamics (MD) trajectories using graph-embedding and dynamic time-warping techniques, enabling the comparison of simulations despite temporal misalignments. This approach addresses the core challenge in MD analysis: identifying common molecular patterns across simulations."
   license: MIT
   license_file: LICENSE

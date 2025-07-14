@@ -5,7 +5,6 @@ import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import matplotlib.cm as cmx
 from matplotlib.collections import LineCollection
-from tqdm import tqdm
 from typing import List
 import numpy as np
 import pandas as pd
@@ -271,7 +270,7 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
 
     fig, axes = plt.subplots(rows, cols,  figsize=(19, 15))
 
-    for i, _ in enumerate(barycenters):#tqdm(enumerate(barycenters), unit='Plot', total=len(barycenters), desc="Plotting iterative pruning process", dynamic_ncols=True, leave=True, disable=(not verbose)):
+    for i, _ in enumerate(barycenters):
         
         if i == 0:
             replicas = replica_ranks.index

@@ -1,6 +1,6 @@
-wl_iterations: 5 # Number of Weisfeiler-Lehman iterations. Default is 3.
+wl_iterations: 3 # Number of Weisfeiler-Lehman iterations. Default is 3.
 dimensions: 16 # Dimensionality of embedding. Default is 16.
-workers: 25 # Number of cores. Default is 1.
+workers: 1 # Number of cores. Default is 1.
 down_sampling: 0. # D# own sampling frequency. Default is 0.
 epochs: 10 # Number of epochs. Default is 10.
 learning_rate: 0.025 # HogWild! learning rate. Default is 0.025.

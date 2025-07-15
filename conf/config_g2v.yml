@@ -1,9 +1,9 @@
-wl_iterations: 3 # Number of Weisfeiler-Lehman iterations. Default is 3.
-dimensions: 16 # Dimensionality of embedding. Default is 16.
-workers: 1 # Number of cores. Default is 1.
-down_sampling: 0. # D# own sampling frequency. Default is 0.
-epochs: 10 # Number of epochs. Default is 10.
-learning_rate: 0.025 # HogWild! learning rate. Default is 0.025.
-min_count: 5 # Minimal count of graph feature occurrences. Default is 5.
-seed: 42 # Random seed for the model. Default is 42.
-erase_base_features: false # Erasing the base features. Default is False.
+wl_iterations: 3 # Number of Weisfeiler-Lehman iterations. The default is 3.
+dimensions: 16 # Dimensionality of embedding. The default is 16.
+workers: 1 # Number of computing cores. The default is 1.
+down_sampling: 0. # Down sampling frequency. The default is 0.
+epochs: 10 # Number of epochs. The default is 10.
+learning_rate: 0.025 # HogWild! learning rate. The default is 0.025.
+min_count: 5 # Minimal count of graph feature occurrences. The default is 5.
+seed: 42 # Random seed for the model. The default is 42.
+erase_base_features: false # Erasing the base features. The default is False.

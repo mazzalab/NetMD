@@ -56,5 +56,5 @@ setup(
         "Tracker": "https://github.com/mazzalab/netmd/issues",
     },
     keywords="network, embeddings, md, bioinformatics",
-    python_requires=">=3.10,<3.11"
+    python_requires=">=3.10,<3.12.8"
 )

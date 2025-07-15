@@ -19,7 +19,7 @@ Run NetMD on example trajectories:
 
 ```bash
 netmd \
-  -F example/replica1.tsv example/replica2.tsv example/replica3.tsv \
+  -F example/GLUT1_WT/FullReplica1_WT.tsv example/GLUT1_WT/FullReplica2_WT.tsv example/GLUT1_WT/FullReplica3_WT.tsv \
   -o results \
   -e 0.1 \
   -c conf/config_g2v.yml \
@@ -28,11 +28,11 @@ netmd \
 
 **Flags:**
 
-* `-F`: Comma-separated list of TSV trajectory files
-* `-e`: Entropy filter on graph's edges 
-* `-c`: graph2vec configuration YAML
-* `-o`: Output directory
-* `--verbose`: Show detailed logs
+* `-F`: List of residue-residue contacts files extracted from MD trajectories with the Python package [GetContacts](https://github.com/getcontacts/getcontacts).
+* `-e`: Entropy filter on graph's edges. Lower thresholds increase sensitivity by capturing more (including weaker) interactions, while higher thresholds prioritize only the strongest, most dynamic interactions, reducing noise.
+* `-c`: graph2vec configuration YAML. 
+* `-o`: Output directory.
+* `--verbose`: Show more detailed logs.
 
 Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, and other settings. See documentation for more options.
 

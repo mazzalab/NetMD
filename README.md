@@ -29,7 +29,7 @@ netmd \
 **Flags:**
 
 * `-F`: List of residue-residue contacts files extracted from MD trajectories with the Python package [GetContacts](https://github.com/getcontacts/getcontacts).
-* `-e`: Entropy filter on graph's edges. Lower thresholds increase sensitivity by capturing more (including weaker) interactions, while higher thresholds prioritize only the strongest, most dynamic interactions, reducing noise.
+* `-e`: Entropy filter on graph's edges (value between 0. and 1.). Lower thresholds increase sensitivity by capturing more (including weaker) interactions, while higher thresholds prioritize only the strongest, most dynamic interactions, reducing noise.
 * `-c`: graph2vec configuration YAML. 
 * `-o`: Output directory.
 * `--verbose`: Show more detailed logs.

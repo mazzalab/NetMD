@@ -14,8 +14,11 @@ if util.find_spec("setuptools") is None:
 from setuptools import setup, find_packages
 
 # Check Python version
-if sys.version_info.major != 3 or sys.version_info.minor != 10:
-    sys.exit("Sorry, Python == 3.10.x is the only supported version.")
+min_version = (3, 10)
+max_version = (3, 12, 9)  # just above 3.12.8
+
+if not (min_version <= sys.version_info < max_version):
+    sys.exit("Sorry, only Python versions >=3.10 and <=3.12.8 are supported.")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -53,5 +56,5 @@ setup(
         "Tracker": "https://github.com/mazzalab/netmd/issues",
     },
     keywords="network, embeddings, md, bioinformatics",
-    python_requires=">=3.10,<3.11"
+    python_requires=">=3.10,<3.12.8"
 )

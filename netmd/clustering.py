@@ -22,6 +22,9 @@ def elbow_method_cut(linkage_matrix: np.ndarray)->  float:
     
     all_gaps = np.diff(distances)
 
+    if len(all_gaps) == 0:
+        return 0  # No gaps to analyze
+    
     # Find elbow point using gap differences
     max_diff_idx = np.argmax(all_gaps) 
 

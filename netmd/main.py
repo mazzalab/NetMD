@@ -151,8 +151,15 @@ def main(args: argparse.Namespace) -> None:
 	else:
 		graphs, meta_data, entropies = iterate_replica_files(args.Files, features_df, args.verbose)
 
+	replica_names = meta_data['Rep'].unique()
+	if len(replica_names) < 2:
+		print(Fore.RED + Style.BRIGHT + f"[ERROR] Found {len(replica_names)} replica. At least two replicas should be provided. Please check the input files or directory structure." + Style.RESET_ALL)
+		return 1
+	elif len(replica_names) == 2:
+		print(Fore.YELLOW + Style.BRIGHT + f"[WARNING] Only {len(replica_names)} replicas were found. The clustering and pruning will not provide meaningful results, try with three or more replicas." + Style.RESET_ALL)
 
 	if args.verbose:
+		print(f"\nFound {len(replica_names)} replicas\n")
 		print("\nFiltering...\n")
 
 	# Save the graphs, metadata, and entropies to files

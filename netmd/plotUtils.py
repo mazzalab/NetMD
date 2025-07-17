@@ -269,6 +269,7 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
     colors = {replica: cmap(i / replica_ranks.shape[0]) for i, replica in enumerate(replica_ranks.index)}
 
     fig, axes = plt.subplots(rows, cols,  figsize=(19, 15))
+    axes = axes.flatten()  
 
     for i, _ in enumerate(barycenters):
         
@@ -286,7 +287,7 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
 
         # Plot each replica with color mapped by frames
         for j,replica in enumerate(replicas):
-            scatter = axes[row][col].scatter(
+            scatter = axes[row*cols + col].scatter(
                 reduced_embs[ meta_data['Rep'] == replica, 0], 
                 reduced_embs[ meta_data['Rep'] == replica, 1],
                 marker='o', alpha = 0.30, s=10, 
@@ -296,7 +297,7 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
             
         
         # Highlight the barycenter with a distinct style
-        axes[row][col].scatter(
+        axes[row*cols + col].scatter(
             reduced_embs[meta_data['Rep'] == 'barycenter', 0], 
             reduced_embs[meta_data['Rep'] == 'barycenter', 1], 
             c='black',  # Distinct color for the barycenter
@@ -306,25 +307,25 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
             )
                 
         # Adding title and axis labels with increased font size and bold text
-        axes[row, col].set_title(f"Top {len(barycenters) - i + 1} Replicas", fontsize=16, fontweight='bold', color='black')
-        axes[row, col].set_xlabel("Embedding Dimension 1", fontsize=14, color='black')
-        axes[row, col].set_ylabel("Embedding Dimension 2", fontsize=14, color='black')
-        
+        axes[row*cols + col].set_title(f"Top {len(barycenters) - i + 1} Replicas", fontsize=16, fontweight='bold', color='black')
+        axes[row*cols + col].set_xlabel("Embedding Dimension 1", fontsize=14, color='black')
+        axes[row*cols + col].set_ylabel("Embedding Dimension 2", fontsize=14, color='black')
+
         # Enhance ticks for better visibility
-        axes[row, col].tick_params(axis='x', labelsize=14, color='black')
-        axes[row, col].tick_params(axis='y', labelsize=14, color='black')
-        axes[row, col].ticklabel_format(axis='x', style='sci', scilimits=(-3,3)) 
+        axes[row*cols + col].tick_params(axis='x', labelsize=14, color='black')
+        axes[row*cols + col].tick_params(axis='y', labelsize=14, color='black')
+        axes[row*cols + col].ticklabel_format(axis='x', style='sci', scilimits=(-3,3))
 
         # Gridlines with light opacity for a cleaner look
-        axes[row, col].grid(True, color='gray', linestyle='--', linewidth=0.6, alpha=0.3)
+        axes[row*cols + col].grid(True, color='gray', linestyle='--', linewidth=0.6, alpha=0.3)
 
-        axes[row, col].legend()
+        axes[row*cols + col].legend()
 
 
     for i in range(rows):
         for j in range(cols):
-            if not axes[i, j].has_data():  # Check if the subplot has data
-                fig.delaxes(axes[i, j]) 
+            if not axes[i*cols + j].has_data():  # Check if the subplot has data
+                fig.delaxes(axes[i*cols + j]) 
 
     # Adjust layout for tight presentation
     fig.tight_layout()
@@ -353,6 +354,7 @@ def plot_dendogram(linkage_matrix: np.ndarray, cut_distance_elbow: int, replica_
     ax.set_ylabel("Distance", fontsize=14, color='black')
     ax.tick_params(axis='x', labelsize=10, color='black')
     ax.tick_params(axis='y', labelsize=14, color='black')
+    ax.grid(True, axis='y')
 
     ax.legend()
     # Adjust the bottom margin

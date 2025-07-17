@@ -2,15 +2,23 @@
 
 NetMD is a computational method for identifying consensus behavior across multiple molecular dynamics (MD) simulations. Using Graph-based Embeddings and Dynamic Time Warping, NetMD aligns trajectories that may be temporally out of sync and pinpoints the replicas that most faithfully represent the overall ensemble behavior. This enables consistent comparisons across simulations and supports reliable characterization of system variants, making it easier to detect shared patterns and reduce the influence of outliers or simulation artifacts.
 
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/netmd.svg)](https://anaconda.org/conda-forge/netmd)
-[![License](https://img.shields.io/github/license/mazzalab/netmd.svg)](LICENSE)
+[![Conda Version](https://anaconda.org/bioconda/netmd/badges/version.svg)](https://anaconda.org/bioconda/netmd)
+[![Last updated](https://anaconda.org/bioconda/netmd/badges/latest_release_date.svg)]()
+[![Platforms](https://anaconda.org/bioconda/netmd/badges/platforms.svg)]()
+[![Download](https://anaconda.org/bioconda/netmd/badges/downloads.svg)]()
+[![License](https://anaconda.org/bioconda/netmd/badges/license.svg)]()
 
 ## 📦 Installation
+
+You can pull `netmd` without installing any dependencies by using the pre-built Docker image available on Quay.io.
+```bash
+docker pull quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0
+```
 
 Install via Conda:
 
 ```bash
-conda install -c conda-forge netmd
+conda install bioconda::netmd
 ```
 
 ## 🚀 Quickstart
@@ -25,6 +33,22 @@ netmd \
   -c conf/config_g2v.yml \
   --verbose
 ```
+
+or
+
+```
+docker run --rm \
+  -v $(pwd):/data \
+  quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0 \
+  netmd \
+    -F /data/example/GLUT1_WT/FullReplica1_WT.tsv /data/example/GLUT1_WT/FullReplica2_WT.tsv /data/example/GLUT1_WT/FullReplica3_WT.tsv \
+    -o /data/results \
+    -e 0.1 \
+    -c /data/conf/config_g2v.yml \
+    --verbose
+```
+> [!NOTE]
+> Replace `$(pwd)` with the full path to your working directory if you're not on Unix-based systems (e.g., use `%cd%` on Windows PowerShell).
 
 **Flags:**
 

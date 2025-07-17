@@ -27,7 +27,7 @@ Run NetMD on example trajectories:
 
 ```bash
 netmd \
-  -F example/GLUT1_WT/FullReplica1_WT.tsv example/GLUT1_WT/FullReplica2_WT.tsv example/GLUT1_WT/FullReplica3_WT.tsv \
+  -F example/GLUT1_WT/FullReplica10_WT.tsv example/GLUT1_WT/FullReplica2_WT.tsv example/GLUT1_WT/FullReplica3_WT.tsv \
   -o results \
   -e 0.1 \
   -c conf/config_g2v.yml \
@@ -41,7 +41,7 @@ docker run --rm \
   -v $(pwd):/data \
   quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0 \
   netmd \
-    -F /data/example/GLUT1_WT/FullReplica1_WT.tsv /data/example/GLUT1_WT/FullReplica2_WT.tsv /data/example/GLUT1_WT/FullReplica3_WT.tsv \
+    -F /data/example/GLUT1_WT/FullReplica10_WT.tsv /data/example/GLUT1_WT/FullReplica2_WT.tsv /data/example/GLUT1_WT/FullReplica3_WT.tsv \
     -o /data/results \
     -e 0.1 \
     -c /data/conf/config_g2v.yml \

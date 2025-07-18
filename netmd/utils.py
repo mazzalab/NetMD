@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 
 def extract_contacts(file_path, intervals):
     """

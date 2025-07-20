@@ -11,6 +11,7 @@ NetMD is a computational method for identifying consensus behavior across multip
 ## 📦 Installation
 
 You can pull `netmd` without installing any dependencies by using the pre-built Docker image available on Quay.io.
+
 ```bash
 docker pull quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0
 ```
@@ -18,7 +19,11 @@ docker pull quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0
 Install via Conda:
 
 ```bash
-conda install bioconda::netmd
+# either create a new conda env and install NetMD
+conda create -n netmd -c conda-forge bioconda::netmd
+
+# or, if you already have an activa conda env, just install
+conda install -c conda-forge bioconda::netmd
 ```
 
 ## 🚀 Quickstart
@@ -47,42 +52,41 @@ docker run --rm \
     -c /data/conf/config_g2v.yml \
     --verbose
 ```
+
 > [!NOTE]
 > Replace `$(pwd)` with the full path to your working directory if you're not on Unix-based systems (e.g., use `%cd%` on Windows PowerShell).
 
 **Flags:**
 
-* `-F`: List of residue-residue contacts files extracted from MD trajectories with the Python package [GetContacts](https://github.com/getcontacts/getcontacts).
-* `-e`: Entropy filter on graph's edges (value between 0. and 1.). Lower thresholds increase sensitivity by capturing more (including weaker) interactions, while higher thresholds prioritize only the strongest, most dynamic interactions, reducing noise.
-* `-c`: graph2vec configuration YAML. 
-* `-o`: Output directory.
-* `--verbose`: Show more detailed logs.
+- `-F`: List of residue-residue contacts files extracted from MD trajectories with the Python package [GetContacts](https://github.com/getcontacts/getcontacts).
+- `-e`: Entropy filter on graph's edges (value between 0. and 1.). Lower thresholds increase sensitivity by capturing more (including weaker) interactions, while higher thresholds prioritize only the strongest, most dynamic interactions, reducing noise.
+- `-c`: graph2vec configuration YAML.
+- `-o`: Output directory.
+- `--verbose`: Show more detailed logs.
 
 Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, and other settings. See documentation for more options.
 
 ## ✨ Features
 
-* **Smart Graph Embedding**: Transform complex molecular dynamics frames into meaningful low-dimensional vectors using the graph2vec algorithm. Each protein conformation becomes a compact, analyzable representation that captures essential structural information.
+- **Smart Graph Embedding**: Transform complex molecular dynamics frames into meaningful low-dimensional vectors using the graph2vec algorithm. Each protein conformation becomes a compact, analyzable representation that captures essential structural information.
 
-* **Consensus Discovery**: Automatically identify the most representative behaviors across multiple MD simulations using Dynamic Time Warping (DTW) barycenter averaging. Align trajectories that may be temporally out of sync and find the true consensus patterns.
+- **Consensus Discovery**: Automatically identify the most representative behaviors across multiple MD simulations using Dynamic Time Warping (DTW) barycenter averaging. Align trajectories that may be temporally out of sync and find the true consensus patterns.
 
-* **Intelligent Clustering**: Hierarchically cluster molecular conformations to reveal shared structural patterns and detect outlier behaviors. Reduce noise from simulation artifacts and focus on biologically relevant states.
+- **Intelligent Clustering**: Hierarchically cluster molecular conformations to reveal shared structural patterns and detect outlier behaviors. Reduce noise from simulation artifacts and focus on biologically relevant states.
 
-* **Entropy-Based Filtering**: Apply smart edge filtering based on entropy thresholds to eliminate irrelevant interactions and focus on the most informative structural features.
+- **Entropy-Based Filtering**: Apply smart edge filtering based on entropy thresholds to eliminate irrelevant interactions and focus on the most informative structural features.
 
-## 🛠️ Workflow 
+## 🛠️ Workflow
 
 <p align="center">
-  <img src="./docs/source/_static/img/workflow/Figure1.svg" alt="Workflow diagram" width="70%"/>
+  <img src="./docs/source/_static/img/workflow/Figure1.png" alt="Workflow diagram" width="80%"/>
 </p>
-
 
 ## 📓 Interactive Analysis Notebook
 
 Explore an end-to-end analysis of the GLUT1 case study within our Jupyter notebook, which outlines the complete NetMD workflow. We encourage you to experiment and customize it to fit your needs.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mazzalab/netmd/main?filepath=example/netmd_notebook.ipynb)
-
 
 <!-- ## 📚 Documentation
 

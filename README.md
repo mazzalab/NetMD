@@ -13,7 +13,7 @@ NetMD is a computational method for identifying consensus behavior across multip
 You can pull `netmd` without installing any dependencies by using the pre-built Docker image available on Quay.io.
 
 ```bash
-docker pull quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0
+docker pull quay.io/biocontainers/netmd:1.0.1--pyh3c853c9_0
 ```
 
 Install via Conda:
@@ -44,7 +44,7 @@ or
 ```
 docker run --rm \
   -v $(pwd):/data \
-  quay.io/biocontainers/netmd:1.0.0--pyh3c853c9_0 \
+  quay.io/biocontainers/netmd:1.0.1--pyh3c853c9_0 \
   netmd \
     -F /data/example/GLUT1_WT/FullReplica10_WT.tsv /data/example/GLUT1_WT/FullReplica2_WT.tsv /data/example/GLUT1_WT/FullReplica3_WT.tsv \
     -o /data/results \
@@ -84,7 +84,7 @@ Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, a
 
 ## 📓 Interactive Analysis Notebook
 
-Explore an end-to-end analysis of the GLUT1 case study within our Jupyter notebook, which outlines the complete NetMD workflow. We encourage you to experiment and customize it to fit your needs.
+Explore a complete case study analysis of the Glucose Transporter 1 (GLUT1) using our Jupyter [notebook](https://github.com/mazzalab/NetMD/blob/main/tutorial/netmd_notebook.ipynb), which demonstrates the full NetMD workflow. Feel free to experiment with it and adapt it to suit your needs.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mazzalab/netmd/main?filepath=example/netmd_notebook.ipynb)
 

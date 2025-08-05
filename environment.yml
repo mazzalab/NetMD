@@ -1,25 +1,9 @@
 # .binder/environment.yml
-name: netmd-env
+name: testenv
 channels:
   - conda-forge
-  - bioconda
-  - defaults
 dependencies:
-  # Your core package
-  - bioconda::netmd
-
-  # Packages from your import list
-  - scikit-learn  # for sklearn
-  - plotly        # for plotly.graph_objects
-  - matplotlib-base # for matplotlib.pyplot (using -base is lighter for non-GUI use)
-  - scipy         # for scipy.cluster and scipy.spatial
-  - tslearn       # for tslearn
-  - ruptures      # for ruptures
-  - networkx      # for networkx
-  - pandas        # for pandas
-  - numpy         # for numpy
-
-  # Core dependencies for Binder
   - python=3.9
+  - numpy
+  - pandas
   - jupyterlab
-  - ipykernel

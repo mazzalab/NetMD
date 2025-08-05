@@ -20,6 +20,6 @@ dependencies:
   # - numpy         # for numpy
 
   # Core dependencies for Binder
-  - python=3.9
+  - python=3.10
   - jupyterlab
   - ipykernel

@@ -1,25 +1,27 @@
-# .binder/environment.yml
 name: netmd-env
 channels:
   - conda-forge
   - bioconda
-  - defaults
+channel_priority: strict
+
 dependencies:
-  # Your core package
+  # Base Python bumped to satisfy netmd’s requirement
+  - python=3.10
+
+  # Core tool
   - netmd
 
-  # Packages from your import list
-  # - scikit-learn  # for sklearn
-  # - plotly        # for plotly.graph_objects
-  # - matplotlib-base # for matplotlib.pyplot (using -base is lighter for non-GUI use)
-  # - scipy         # for scipy.cluster and scipy.spatial
-  # - tslearn       # for tslearn
-  # - ruptures      # for ruptures
-  # - networkx      # for networkx
-  # - pandas        # for pandas
-  # - numpy         # for numpy
-
-  # Core dependencies for Binder
-  - python=3.10
+  # Jupyter stack
   - jupyterlab
   - ipykernel
+
+  # (Uncomment only the libraries you actually need)
+  # - numpy
+  # - pandas
+  # - scipy
+  # - scikit-learn
+  # - matplotlib-base
+  # - plotly
+  # - tslearn
+  # - ruptures
+  # - networkx

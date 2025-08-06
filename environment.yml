@@ -5,7 +5,10 @@ channels:
   - bioconda
   - defaults
 dependencies:
+  # Your core package
+  - netmd
+
+  # Core dependencies for Binder
   - python=3.10
   - jupyterlab
-  - ipykernel  
-  - netmd
+  - ipykernel

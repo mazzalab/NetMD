@@ -237,14 +237,14 @@ This allows for a comprehensive understanding of the alignment process and the d
   .. csv-table:: 
       :header: Replica Name, Rank, Barycenter Distance
 
-      FullReplica3_r333q.tsv,	0, 0.539
-      FullReplica4_r333q.tsv,	1, 0.539
-      FullReplica7_r333q.tsv,	2, 0.632
-      FullReplica6_r333q.tsv,	3, 0.690
-      FullReplica5_r333q.tsv,	4, 0.742
-      FullReplica2_r333q.tsv,	5, 0.751
-      FullReplica9_r333q.tsv,	6, 0.788
-      FullReplica10_r333q.tsv,	7, 0.972
+      FullReplica9_r333q.tsv,    0.0,            0.614938
+      FullReplica7_r333q.tsv,    1.0,            0.614938
+      FullReplica3_r333q.tsv,    2.0,            0.823672
+      FullReplica5_r333q.tsv,    3.0,            0.890971
+      FullReplica4_r333q.tsv,    4.0,            0.927845
+      FullReplica10_r333q.tsv,   5.0,            0.986553
+      FullReplica6_r333q.tsv,    6.0,            1.016571
+      FullReplica2_r333q.tsv,    7.0,            1.261702
 
 * **The clustering analysis of the replicas.**
   

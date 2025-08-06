@@ -13,7 +13,7 @@
 
 .. |config_file| raw:: html
     
-    <a href="test" target="_blank">config_g2v.yml</a>
+    <a href="https://github.com/mazzalab/NetMD/blob/main/conf/config_g2v.yml" target="_blank">config_g2v.yml</a>
 
 .. |github_netmd| raw:: html
     
@@ -38,7 +38,12 @@
     :class: only-dark
     :width: 35
 
+.. |notebook| raw:: html
+    
+    <a href="https://github.com/mazzalab/NetMD/blob/main/tutorial/netmd_notebook.ipynb" target="_blank">NetMD Notebook</a>
+
 .. _quickstart_example:
+
 
 
 Quickstart by Example
@@ -58,7 +63,7 @@ NetMD Example
    :width: 30%
    :align: right
 
-We present a practical example to demonstrates NetMD's workflow, from launch to result visualization, 
+We present a practical example to demonstrates NetMD's workflow, from start to finish, using a real-world dataset.
 
 The study involves the conformational transition of the **GLUT1** protein from the `outward-open` to the `inward-open` state a process closely linked to the glucose transport pathway. Here, we characterized the conformational transition of the **R333Q** ("Arg333Gln") mutant GLUT1, 
 starting from outward-open conformations with glucose bound in its pocket, obtained through multiple Supervised Molecular Dynamics (SuMD [|SuMD_ref|]) simulations. 
@@ -121,8 +126,8 @@ Launch NetMD by providing the required input files. You can either list files di
 
   .. code-block:: console
 
-    (env) $ netmd -F [FullReplica2_r333q, FullReplica3_r333q, FullReplica4_r333q, FullReplica5_r333q, FullReplica7_r333q, FullReplica8_r333q, FullReplica9_r333q, FullReplica10_r333q] -o ./results -e 0.1 -c config_g2v.yml --verbose
-  
+    (env) $ netmd -F FullReplica2_r333q.tsv FullReplica3_r333q.tsv FullReplica4_r333q.tsv FullReplica5_r333q.tsv FullReplica7_r333q.tsv FullReplica8_r333q.tsv FullReplica9_r333q.tsv FullReplica10_r333q.tsv -o ./results -e 0.1 -c config_g2v.yml --verbose
+
   NetMD will iterate over the list of files and generate the embeddings for each one using the set parameters. The |config_file| file contains the arguments for Graph2VeC:
 
 
@@ -130,7 +135,7 @@ Launch NetMD by providing the required input files. You can either list files di
 
   .. code-block:: console
 
-    (env) $ netmd -I ./R333Q FullReplica -o ./results -e 0.1 -c config_g2v.yml --verbose
+    (env) $ netmd -I tutorial/GLUT1_R333Q FullReplica -o ./results -e 0.1 -c config_g2v.yml --verbose
 
   
   NetMD will recursivly explore the directory tree starting from ``R333Q`` and generate the embeddings for each file with the prefix `FullReplica`. The |config_file| file contains the arguments for Graph2Vec:
@@ -139,7 +144,11 @@ Launch NetMD by providing the required input files. You can either list files di
 
     The ``-I`` option will only work if the input files are in the same directory. If you have files in different directories, you can use the ``-F`` option to specify them.
 
-If you have the time, please take a look at NetMD’s :ref:`create_parser_function` function to learn more about the available options.
+To learn more about the available command line options:
+
+.. code-block:: console
+
+   (env) $ netmd -h
 
 |
 
@@ -255,4 +264,5 @@ This allows for a comprehensive understanding of the alignment process and the d
     :width: 100%
     :align: center
 
-
+.. note::
+  For further details and results, such as change-point detection, check the |notebook|. 

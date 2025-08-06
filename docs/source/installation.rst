@@ -37,7 +37,11 @@ Installation via Conda
 
 .. code-block:: console
 
-   (env) $ conda install bfxcss::netmd -c conda-forge
+   # either create a new conda env and install NetMD
+   (env) $ conda create -n netmd -c conda-forge bioconda::netmd
+
+   # or, if you already have an activa conda env, just install
+   (env) $ conda install -c conda-forge bioconda::netmd
 
 Check if everything is fine
 

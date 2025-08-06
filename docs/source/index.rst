@@ -111,4 +111,4 @@ Contents
    quickstart
    quickstart_example
    quickstart_notebook
-   manual
+   reference_manual

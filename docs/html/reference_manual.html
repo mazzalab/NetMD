@@ -1,0 +1,1142 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Quickstart with Notebook" href="quickstart_notebook.html" />
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.08.06 -->
+        <title>Reference Manual - NetMD Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e39fa483" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">NetMD Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static//img/netmd_logo_def.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static//img/netmd_logo_def.png" alt="Dark Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">NetMD Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart_example.html">Quickstart by Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart_notebook.html">Quickstart with Notebook</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Reference Manual</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/reference_manual.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="reference-manual">
+<span id="manual"></span><h1>Reference Manual<a class="headerlink" href="#reference-manual" title="Link to this heading">¶</a></h1>
+<hr class="text-linebreak"><p>NetMD employs computational method that synchronizes MD trajectories using graph-embedding and dynamic time-warping techniques,
+this allows researchers to better understand complex molecular interactions, revealing previously unidentified patterns.</p>
+<p>Here we define a more detailed manual of NetMD.</p>
+<section id="usage-and-help">
+<h2>Usage and Help<a class="headerlink" href="#usage-and-help" title="Link to this heading">¶</a></h2>
+<p>NetMD is a command-line tool that allows users to analyze molecular dynamics (MD) trajectories by synchronizing them using graph-embedding and dynamic time-warping techniques.
+The program is designed to work with contact files generated from MD simulations, and it provides a comprehensive set of features for analyzing and visualizing the data.</p>
+<p>To start the program you can use the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>netmd<span class="w"> </span>-I<span class="w"> </span>INPUTPATH<span class="w"> </span>INPUTPATH<span class="w"> </span>-F<span class="w"> </span>FILES<span class="w"> </span><span class="o">[</span>FILES<span class="w"> </span>...<span class="o">]</span><span class="w"> </span>-f<span class="w"> </span>FEATURES<span class="w"> </span>-e<span class="w"> </span>EDGEFILTER<span class="w"> </span>-c<span class="w"> </span>CONFIGFILE<span class="w"> </span>-o<span class="w"> </span>OUTPUTPATH<span class="w"> </span>-p<span class="w"> </span>/<span class="w"> </span>--plotFormat<span class="w"> </span><span class="o">{</span>svg,png<span class="o">}</span><span class="w"> </span>--verbose
+</pre></div>
+</div>
+<p>Where the command line arguments are defined as:</p>
+<ul>
+<li><p><strong>-h, --help</strong></p>
+<p>Show the help message and exit.</p>
+</li>
+<li><p><strong>-F FILES [FILES …], --Files FILES [FILES …]</strong>  <em>(required)</em></p>
+<p>Specify one or more contact file paths to be loaded.</p>
+</li>
+<li><p><strong>-I INPUTPATH INPUTPATH, --InputPath INPUTPATH INPUTPATH</strong>  <em>(required)</em></p>
+<p>This option accepts two inputs: a directory tree for recursive exploration and a filename prefix shared by all contact files.
+The program will search for contact files with the specified prefix within the provided directory tree.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-I<span class="w"> </span>./examples/data<span class="w"> </span>FullReplica
+</pre></div>
+</div>
+</li>
+<li><p><strong>-f FEATURES, --features FEATURES</strong> <em>(optional)</em></p>
+<p>Specify the path to the file containing node features. The file must be in tab-separated values (.tsv) format, the first column should be the residue number followed by the features columns.
+If no path is provided, the unique residue identifier in the contact file will be used as the node feature.</p>
+<p><strong>Example:</strong></p>
+<div class="small-table docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>residue_number</p></th>
+<th class="head"><p>feature_1</p></th>
+<th class="head"><p>feature_2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2.653</p></td>
+<td><p>NZ</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>3.851</p></td>
+<td><p>NZ</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2.999</p></td>
+<td><p>OE1</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>3.729</p></td>
+<td><p>OD1</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>2.813</p></td>
+<td><p>OE1</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>3.654</p></td>
+<td><p>OE1</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li><p><strong>-e EDGEFILTER, --edgeFilter EDGEFILTER</strong> <em>(optional)</em></p>
+<p>Specify the entropy threshold used to filter the graph edges. <em>(default: 0.1)</em></p>
+</li>
+<li><p><strong>-c CONFIGFILE, --configFile CONFIGFILE</strong> <em>(optional)</em></p>
+<p>Specify the path to the configuration file containing arguments for Graph2Vec.
+If no path is provided, default values will be used.</p>
+</li>
+<li><p><strong>-o OUTPUTPATH, --outputPath OUTPUTPATH</strong> <em>(optional)</em></p>
+<p>Specify the output path. If no path is provided, the <code class="docutils literal notranslate"><span class="pre">results</span></code> folder will be created.</p>
+</li>
+<li><p><strong>-p, --plotFormat {svg,png}</strong> <em>(optional)</em></p>
+<p>Specify the format of the image output. <em>(svg, png; default: svg)</em></p>
+</li>
+<li><p><strong>--verbose</strong> <em>(optional)</em></p>
+<p>Allow extra prints to monitor progress.</p>
+</li>
+</ul>
+</section>
+<section id="program-workflow">
+<h2>Program Workflow<a class="headerlink" href="#program-workflow" title="Link to this heading">¶</a></h2>
+<img alt="load MD Image" class="only-light" src="_images/workflow_A.png" />
+<img alt="load MD Image" class="only-dark" src="_images/workflow_A_dark.png" />
+<p><strong>1. Loading Molecular Dynamics (MD) Replica Files and Network Construction:</strong></p>
+<p>The process begins by loading multiple MD simulation trajectory files, each representing a “replica” of the molecular system’s evolution.
+There are two way to pass the replica files to the program:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iterate_replica_files</span></code>: Iterate trough the given path of the contact files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crawl_replica_files</span></code>: Recursively explore the given directory tree and search for contact files with a common prefix.</p></li>
+</ul>
+<p>For each frame within each replica, a network representation is constructed using NetworkX, where nodes correspond to atoms or residues, and edges represent interactions between them.
+This network captures the structural relationships at each time point.</p>
+<img alt="filtering NetMD Image" class="only-light" src="_images/workflow_B.png" />
+<img alt="filtering NetMD Image" class="only-dark" src="_images/workflow_B_dark.png" />
+<p><strong>2. Preprocessing: Edge Filtering Based on Entropy:</strong></p>
+<p>To reduce noise and focus on significant interactions, each replica undergoes preprocessing. During the loading process the <code class="docutils literal notranslate"><span class="pre">load_data</span></code> function is called, which computes the intra-replica entropy for each edge, reflecting the variability of that interaction within the individual replica’s trajectory.
+An inter-replica filter is then applied in <code class="docutils literal notranslate"><span class="pre">entropy_filter</span></code>, removing edges with consistently low entropy across all replicas. This step ensures that only robust and relevant interactions are retained for further analysis.</p>
+<img alt="graph2vec NetMD Image" class="only-light" src="_images/workflow_C.png" />
+<img alt="graph2vec NetMD Image" class="only-dark" src="_images/workflow_C_dark.png" />
+<p><strong>3. Graph2Vec Embedding: Transforming Networks into Time Series:</strong></p>
+<p>Following preprocessing, network representations are fed into <code class="docutils literal notranslate"><span class="pre">g2v_fit_transform</span></code>,
+leveraging Graph2Vec[<a href="https://karateclub.readthedocs.io/en/latest/_modules/karateclub/graph_embedding/graph2vec.html" target="_blank">1</a>] to produce numerical embeddings.
+This embedding process translates the structural essence of each frame into a high-dimensional vector.
+Consequently, the molecular system’s dynamic evolution is captured as a sequential series of these embedding vectors.</p>
+<img alt="alignment NetMD Image" class="only-light align-center" src="_images/workflow_D.png" style="width: 75%;" />
+<img alt="alignment NetMD Image" class="only-dark align-center" src="_images/workflow_D_dark.png" style="width: 75%;" />
+<p><strong>4. Barycenter Calculation: Identifying the Central Trajectory:</strong></p>
+<p>To establish a reference trajectory, the barycenter of the embedded time series is computed.
+The barycenter represents the average or central trajectory, capturing the common dynamic features across all replicas. This serves as a basis for comparing and ranking the individual replicas.</p>
+<p><strong>5. Ranking Time Series: Assessing Similarity to the Barycenter:</strong></p>
+<p>Each embedded time series (representing a replica) is ranked based on its similarity to the calculated barycenter.
+This ranking is typically determined using the Dynamic Time Warping (DTW) distance, which accounts for temporal misalignments between trajectories.
+The replicas with the lowest DTW distance to the barycenter are considered the most similar, and therefore ranked higher.</p>
+<p><strong>6. Hierarchical Clustering: Grouping Similar Trajectories:</strong></p>
+<p>Finally, hierarchical clustering is performed on the embedded time series to identify groups of replicas with similar dynamic behaviors.
+This clustering allows researchers to categorize the MD trajectories into distinct clusters, revealing common molecular patterns and identifying variations in the system’s dynamics.
+This step helps to visualize and understand the diversity of the MD simulations.</p>
+<p>Throughout the execution, several plots and files are saved in the <em>out_path</em> specified.</p>
+<section id="matplot-logo-plots-generated">
+<h3><img alt="Conda Logo" class="align-middle" src="_images/matplot_icon-removebg-preview.png" style="width: 35px;" /> Plots Generated<a class="headerlink" href="#matplot-logo-plots-generated" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>2D Plot of the Replica Embeddings</strong>:
+Visual representation of the embeddings of all replicas.</p></li>
+<li><p><strong>2D Plot of the Replica Embeddings with Barycenter</strong>:
+The embeddings with the barycenter overlaid.</p></li>
+<li><p><strong>Iterative Pruning Process Plot</strong>:
+Visualization of the iterative pruning process used to refine the replicas.</p></li>
+<li><p><strong>Dendrogram Plot</strong>:
+A dendrogram plot with a cut line computed using the elbow method, showing the hierarchical clustering results.</p></li>
+</ul>
+</section>
+<section id="tsv-logo-files-created">
+<h3><img alt="Python Logo" class="align-middle" src="_images/tsv_icon-removebg-preview.png" style="width: 25px;" /> Files Created<a class="headerlink" href="#tsv-logo-files-created" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>metadata.tsv</strong>:
+A DataFrame containing information about the replica and frame. Can be used to index the replica embeddings.</p></li>
+<li><p><strong>subgraphs_emb.pkl</strong>:
+A list of subgraph embeddings belonging to different replicas.</p></li>
+<li><p><strong>dtw_matrix.tsv</strong>:
+A squared matrix where each value represents the Euclidean distance between aligned time series.</p></li>
+<li><p><strong>dtw_mapping.txt</strong>:
+This file contains the frame of each replica and the corresponding frame of the barycenter. It illustrates the dynamic time warping (DTW) indexing and the Euclidean distance between frames.</p></li>
+<li><p><strong>iterative_ranks.tsv</strong>:
+A file containing the iterative pruning results of all replicas based on their distance from the barycenter.</p></li>
+</ul>
+</section>
+</section>
+<section id="netmd-reference">
+<h2>NetMD Reference<a class="headerlink" href="#netmd-reference" title="Link to this heading">¶</a></h2>
+<p>This reference manual provides a detailed overview of the functions and classes used in the NetMD.
+We provide this manual to help users understand the functionality and underlying works of the program.
+The manual is organized into sections, each focusing on a specific function or class.</p>
+<hr class="text-linebreak"><section id="create-parser">
+<span id="create-parser-function"></span><h3><code class="docutils literal notranslate"><span class="pre">create_parser</span></code><a class="headerlink" href="#create-parser" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/main.py#L17" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Function that builds the argument parser from the <code class="docutils literal notranslate"><span class="pre">argparse</span></code> library.</p>
+<ul>
+<li><p><strong>-h, --help</strong></p>
+<p>Show this help message and exit.</p>
+</li>
+<li><p><strong>-I INPUTPATH INPUTPATH, --InputPath INPUTPATH INPUTPATH</strong>  <em>(required)</em></p>
+<p>Specify the directory tree path followed by the standardized prefix of the contact file name.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-i<span class="w"> </span>examples_dir<span class="w"> </span>contacts.tsv
+</pre></div>
+</div>
+</li>
+<li><p><strong>-F FILES [FILES …], --Files FILES [FILES …]</strong>  <em>(required)</em></p>
+<p>Specify one or more contact file paths.</p>
+</li>
+<li><p><strong>-f FEATURES, --features FEATURES</strong> <em>(optional)</em></p>
+<p>Specify the path to the input file containing node features. The file must be in tab-separated values (.tsv) format.
+If no path is provided, the unique chain identifier of each residue in the contact file will be used as the node feature.</p>
+</li>
+<li><p><strong>-e EDGEFILTER, --edgeFilter EDGEFILTER</strong> <em>(optional)</em></p>
+<p>Specify the entropy threshold used to filter the graph edges. <em>(default: 0.1)</em></p>
+</li>
+<li><p><strong>-c CONFIGFILE, --configFile CONFIGFILE</strong> <em>(optional)</em></p>
+<p>Specify the path to the configuration file containing arguments for Graph2Vec.
+If no path is provided, default values will be used.</p>
+</li>
+<li><p><strong>-o OUTPUTPATH, --outputPath OUTPUTPATH</strong> <em>(optional)</em></p>
+<p>Specify the output path. If no path is provided, the <code class="docutils literal notranslate"><span class="pre">results</span></code> folder will be used.</p>
+</li>
+<li><p><strong>-p / --plotFormat {svg,png}</strong> <em>(optional)</em></p>
+<p>Specify the format of the image output. <em>(svg, png; default: svg)</em></p>
+</li>
+<li><p><strong>--verbose</strong> <em>(optional)</em></p>
+<p>Allow extra prints.</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><p><em>argparse.ArgumentParser</em>
+Object for parsing command-line strings into Python objects.</p>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="check-entropy">
+<h3><code class="docutils literal notranslate"><span class="pre">check_entropy</span></code><a class="headerlink" href="#check-entropy" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/main.py#L47" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Function that checks if the passed argument is a valid float between 0.0 and 1.0 (inclusive). If the argument does not meet the criteria, it raises an error.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>argument (str)</em>:</dt><dd><p>A string representing the float that needs to be checked.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>argument (str)</em>:</dt><dd><p>The input argument is returned if it’s a valid float between 0.0 and 1.0.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Raises</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>ValueError (argparse.ArgumentTypeError)</em>:</dt><dd><p>If the argument is not a valid float or is not within the specified range (0.0 to 1.0), an error is raised.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="iterate-replica-files">
+<h3><code class="docutils literal notranslate"><span class="pre">iterate_replica_files</span></code><a class="headerlink" href="#iterate-replica-files" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L274" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Iterates through the listed files, processes each file, and loads the resulting data.</p>
+<p>This function takes a list of file paths, processes each file using the <code class="docutils literal notranslate"><span class="pre">process_file</span></code>
+function to extract relevant data, and then loads the extracted data into NetworkX graphs,
+metadata DataFrames, and entropy DataFrames using the <code class="docutils literal notranslate"><span class="pre">load_data</span></code> function.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>file_list (list[str, …])</em>:</dt><dd><p>List of files path.</p>
+</dd>
+<dt><em>features_data (pd.DataFrame)</em>:</dt><dd><p>DataFrame containing features for each residue node.</p>
+</dd>
+<dt><em>verbose (bool)</em>:</dt><dd><p>Allow extra prints.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Tuple</em>:</dt><dd><p>containing: a list of <em>NetworkX</em> graphs, one for each frame in all processed files,
+a <em>DataFrame</em> containing metadata about the frames, and a <em>DataFrame</em> containing the entropy of each edge across all processed files.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="crawl-replica-files">
+<h3><code class="docutils literal notranslate"><span class="pre">crawl_replica_files</span></code><a class="headerlink" href="#crawl-replica-files" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L216" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Recursively explores a directory to process contact files and construct network representations.</p>
+<p>This function traverses a directory tree, identifies files with a specified prefix,
+processes them using the <cite>process_file</cite> function to extract relevant data, and then loads the extracted data into NetworkX graphs,
+metadata DataFrames, and entropy DataFrames using the <cite>load_data</cite> function.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>crawl_path (str)</em>:</dt><dd><p>The path to the directory to crawl.</p>
+</dd>
+<dt><em>file_prefix (str)</em>:</dt><dd><p>The prefix of the files to process.</p>
+</dd>
+<dt><em>features_data (pd.DataFrame)</em>:</dt><dd><p>DataFrame containing features for each residue node.</p>
+</dd>
+<dt><em>verbose (bool)</em>:</dt><dd><p>If True, prints information about loaded files.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Tuple</em>:</dt><dd><p>containing: a list of <em>NetworkX</em> graphs, one for each frame in all processed files,
+a <em>DataFrame</em> containing metadata about the frames, and a <em>DataFrame</em> containing the entropy of each edge across all processed files.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="load-data">
+<h3><code class="docutils literal notranslate"><span class="pre">load_data</span></code><a class="headerlink" href="#load-data" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L159" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Constructs network representations of molecular dynamics frames and computes edge entropy.</p>
+<p>This function takes contact data (residue interactions), optional node features, and a replica name
+to generate a list of NetworkX graphs, metadata about the frames that is used to index the graph list, and the intra replica entropy of each edge.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>contacts_data (pd.DataFrame)</em>:</dt><dd><p>DataFrame with columns ‘Frame’, ‘Res1’, and ‘Res2’ representing residue contacts.</p>
+</dd>
+<dt><em>features_data (pd.DataFrame)</em>:</dt><dd><p>DataFrame containing features for each residue node (can be empty).</p>
+</dd>
+<dt><em>name (str)</em>:</dt><dd><p>The name of the replica.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Tuple</em>:</dt><dd><p>containing: a list of <em>NetworkX</em> graphs, one for each frame, a <em>DataFrame</em> with metadata about the frames (replica name, frame number), and
+a <em>DataFrame</em> containing the entropy of each edge.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="compute-entropy">
+<h3><code class="docutils literal notranslate"><span class="pre">compute_entropy</span></code><a class="headerlink" href="#compute-entropy" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L131" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Computes edge entropy for a given set of residue contacts. Each edge in the contact data is assigned an entropy value based on the probability of its presence.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>contacts_data (pd.DataFrame)</em>:</dt><dd><p>DataFrame with columns ‘Frame’, ‘Res1’, and ‘Res2’ representing residue contacts.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd><dl class="simple">
+<dt><em>df (pandas.DataFrame)</em>:</dt><dd><p>DataFrame containing the entropy value of each edge.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="process-file">
+<h3><code class="docutils literal notranslate"><span class="pre">process_file</span></code><a class="headerlink" href="#process-file" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L68" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Processes a contact file, extracting residue interaction information and preparing it for analysis.</p>
+<p>This function reads a contact file, filters out comment lines and empty lines, extracts
+the frame, interaction type, and atom identifiers, and then derives residue identifiers
+from the atom identifiers. It then cleans and formats the data into a pandas DataFrame,
+ready for further processing.</p>
+<p>Specifically, the function performs the following steps:</p>
+<ol class="arabic simple">
+<li><p><strong>File Reading and Initial Parsing:</strong>
+* Reads the file line by line, skipping lines starting with ‘#’ (comments) or empty lines.
+* Splits each line by tabs and extracts the first four columns: Frame, Interaction, Atom1, and Atom2.</p></li>
+<li><p><strong>DataFrame Creation and Initial Cleaning:</strong>
+* Creates a pandas DataFrame from the extracted data.
+* Fills any missing values with 0.
+* Assigns column names: “Frame”, “Interaction”, “Atom1”, “Atom2”.</p></li>
+<li><p><strong>Residue Extraction:</strong>
+* Extracts residue numbers from the “Atom1” and “Atom2” columns using regular expressions.
+* Converts the “Frame”, “Res1”, and “Res2” columns to integers.</p></li>
+<li><p><strong>Residue Ordering:</strong>
+* Ensures that “Res1” is always less than or equal to “Res2” by swapping values if necessary. This creates consistent residue pairs.</p></li>
+<li><p><strong>Duplicate Removal and Reindexing:</strong>
+* Removes duplicate rows based on “Frame”, “Res1”, and “Res2” columns.
+* Subtracts 1 from the residue numbers in “Res1” and “Res2” columns, effectively reindexing them.</p></li>
+<li><p><strong>Replica Name Extraction:</strong>
+* Extracts the replica name from the file path.</p></li>
+</ol>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>file_path (str)</em>:</dt><dd><p>The path to the contact file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Tuple</em>:</dt><dd><p>containing: a <em>DataFrame</em> with columns “Frame”, “Res1”, and “Res2”, representing residue interactions, and the <em>str</em> name of the replica, extracted from the file name.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="parse-config">
+<h3><code class="docutils literal notranslate"><span class="pre">parse_config</span></code><a class="headerlink" href="#parse-config" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/dataLoader.py#L13" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Parses the <em>.yml</em> file containing all the required parameters for the graph embedding model.
+nThe required arguments with their default values are:</p>
+<ul class="simple">
+<li><p><em>wl_iterations</em>: Number of Weisfeiler-Lehman iterations. Default is 3.</p></li>
+<li><p><em>use_node_attribute</em>: Name of graph attribute. Default is “feature”.</p></li>
+<li><p><em>dimensions</em>: Dimensionality of embedding. Default is 16.</p></li>
+<li><p><em>workers</em>: Number of cores. Default is 1.</p></li>
+<li><p><em>down_sampling</em>: Down sampling frequency. Default is 0.0.</p></li>
+<li><p><em>epochs</em>: Number of epochs. Default is 10.</p></li>
+<li><p><em>learning_rate</em> (HogWild): learning rate. Default is 0.025.</p></li>
+<li><p><em>min_count</em>: Minimal count of graph feature occurrences. Default is 5.</p></li>
+<li><p><em>seed</em>: Random seed for the model. Default is 42.</p></li>
+<li><p><em>erase_base_features</em>: Erasing the base features. Default is False.</p></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>config_path (str)</em>:</dt><dd><p>Path to the <em>.yml</em> file.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>config (dict)</em>:</dt><dd><p>Dictionary containing all the arguments for the graph embedding model.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Raises</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>InvalidConfigurationError (Exception)</em>:</dt><dd><p>If the <em>.yml</em> file does not contain the expected arguments.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+<section id="embedding">
+<h2>Embedding<a class="headerlink" href="#embedding" title="Link to this heading">¶</a></h2>
+<hr class="text-linebreak"><section id="g2v-fit-transform">
+<h3><code class="docutils literal notranslate"><span class="pre">g2v_fit_transform</span></code><a class="headerlink" href="#g2v-fit-transform" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L16" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Fit the <a href="https://arxiv.org/abs/1707.05005" target="_blank">Graph2Vec</a> model to the subgraphs and return the embeddings. Implementation from <a href="https://github.com/benedekrozemberczki/karateclub" target="_blank">karateclub</a>.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>g2v_config (Dict)</em>:</dt><dd><p>Configuration dictionary for Graph2Vec.</p>
+</dd>
+<dt><em>subgraphs (List[nx.Graph])</em>:</dt><dd><p>List of NetworkX graphs.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>embeddings (np.ndarray)</em>:</dt><dd><p>Graph embeddings.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="entropy-filter">
+<h3><code class="docutils literal notranslate"><span class="pre">entropy_filter</span></code><a class="headerlink" href="#entropy-filter" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L41" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Creates subgraphs from a list of graphs, including only edges that meet a specified entropy threshold.</p>
+<p>This function filters edges based on their entropy values across multiple frames. Edges are
+included in the subgraphs only if their entropy exceeds the given threshold in all replicas.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>graphs (list[networkx.Graph])</em>:</dt><dd><p>A list of NetworkX graphs.</p>
+</dd>
+<dt><em>entropies (pandas.DataFrame)</em>:</dt><dd><p>A DataFrame containing edge entropy values, where rows represent edges and columns represent frames.</p>
+</dd>
+<dt><em>treshold (float)</em>:</dt><dd><p>The entropy threshold value.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>list[networkx.Graph]</em>:</dt><dd><p>A list of NetworkX subgraphs, each containing only the edges that meet the entropy threshold.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="dtw-mapping">
+<h3><code class="docutils literal notranslate"><span class="pre">dtw_mapping</span></code><a class="headerlink" href="#dtw-mapping" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L144" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Performs Dynamic Time Warping (DTW) alignment between replicas and a barycenter, and saves the mapping.</p>
+<p>This function aligns each replica’s time series data with a barycenter using DTW. It then
+generates a mapping that shows the alignment between frames in each replica and the barycenter,
+and writes this mapping along with per-frame distances to a text file.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>replicas_ts (List[List[float]])</em>:</dt><dd><p>A 3D NumPy array containing the time series data for each replica. The shape should be (num_replicas, num_frames, feature_dim).</p>
+</dd>
+<dt><em>barycenter (np.ndarray)</em>:</dt><dd><p>A 2D NumPy array representing the barycenter time series. The shape should be (num_frames, feature_dim).</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing metadata about the replicas, including a ‘Rep’ column for replica names.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to the output directory where the mapping file will be saved.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="iterative-pruning">
+<h3><code class="docutils literal notranslate"><span class="pre">iterative_pruning</span></code><a class="headerlink" href="#iterative-pruning" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L193" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Iteratively removes a replica based on the greatest DTW distances, recalculating the barycenter
+and scores at each step, until only one replica remains.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>replicas_ts (List[List[float]])</em>:</dt><dd><p>List of time series embeddings.</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>Metadata DataFrame with replica and frame information.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Tuple</em>:</dt><dd><p>a <em>DataFrame</em> ranking all the replicas from worst to best and the <em>list</em> of barycenters calculated at each iteration.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="dim-reduction">
+<h3><code class="docutils literal notranslate"><span class="pre">dim_reduction</span></code><a class="headerlink" href="#dim-reduction" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L68" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Performs dimensionality reduction on subgraph embeddings and a barycenter using PCA and Spectral Embedding.</p>
+<p>This function first applies Principal Component Analysis (PCA) to reduce the dimensionality of
+the subgraph embeddings while retaining 90% of the variance. If the resulting number of
+components is less than 2, PCA is forced to reduce to 2 components. It then concatenates the
+subgraph embeddings and the barycenter, transforms them using the fitted PCA, and applies
+Spectral Embedding for further dimensionality reduction to 2 components.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>subgraph_emb (np.ndarray)</em>:</dt><dd><p>A NumPy array representing the subgraph embeddings.</p>
+</dd>
+<dt><em>barycenter (np.ndarray)</em>:</dt><dd><p>A NumPy array representing the barycenter embedding.</p>
+</dd>
+<dt><em>workers (int)</em>:</dt><dd><p>Number of workers that SpectralEmbedding is allowed to use.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>transfomed_emb (np.ndarray)</em>:</dt><dd><p>A NumPy array representing the transformed embeddings after both PCA and Spectral Embedding.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="iterative-dim-reduction">
+<h3><code class="docutils literal notranslate"><span class="pre">iterative_dim_reduction</span></code><a class="headerlink" href="#iterative-dim-reduction" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/embeddings.py#L103" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Performs iterative dimensionality reduction on subgraph embeddings and a series of barycenters.</p>
+<p>This function applies PCA and Spectral Embedding to reduce the dimensionality of subgraph
+embeddings and each barycenter in a given list. It first fits PCA to the subgraph embeddings,
+ensuring at least 2 components are retained. Then, for each barycenter, it concatenates the
+subgraph embeddings with the barycenter, transforms them using the fitted PCA, and applies
+Spectral Embedding for further dimensionality reduction to 2 components.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>subgraph_emb (np.ndarray)</em>:</dt><dd><p>A NumPy array representing the subgraph embeddings.</p>
+</dd>
+<dt><em>barycenters (np.ndarray)</em>:</dt><dd><p>A NumPy array containing a list of barycenters.</p>
+</dd>
+<dt><em>workers (int)</em>:</dt><dd><p>Number of workers that SpectralEmbedding is allowed to use.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>List[np.ndarray]</em>:</dt><dd><p>A list of NumPy arrays, where each array represents the transformed embeddings (subgraphs + barycenter) after both PCA and Spectral Embedding.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+<section id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Link to this heading">¶</a></h2>
+<hr class="text-linebreak"><section id="compute-dtwmatrix">
+<h3><code class="docutils literal notranslate"><span class="pre">compute_dtwmatrix</span></code><a class="headerlink" href="#compute-dtwmatrix" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/clustering.py#L46" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Computes a Dynamic Time Warping (DTW) distance matrix for a set of time series.</p>
+<p>This function calculates the pairwise DTW distances between all time series in the input array.
+The resulting distance matrix is returned as a pandas DataFrame.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>replica_ts (List[List[float]])</em>:</dt><dd><p>A list containing the time series data. The shape is (num_frames, feature_dim).</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing metadata about the time series, including a ‘Rep’ column for replica names.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>pd.DataFrame</em>:</dt><dd><p>A pandas DataFrame representing the DTW distance matrix. The index and columns are the unique replica names from the meta_data DataFrame.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="normalized-dtw">
+<h3><code class="docutils literal notranslate"><span class="pre">normalized_dtw</span></code><a class="headerlink" href="#normalized-dtw" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/clustering.py#L32" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Computes the normalized distance between two time series using Dynamic Time Warping (DTW).</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>ts1 (List[float])</em>:</dt><dd><p>The first time series.</p>
+</dd>
+<dt><em>ts2 (List[float])</em>:</dt><dd><p>The second time series.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>float</em>:</dt><dd><p>The normalized DTW distance between the two time series.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="hierarchical-clustering-rank">
+<h3><code class="docutils literal notranslate"><span class="pre">hierarchical_clustering_rank</span></code><a class="headerlink" href="#hierarchical-clustering-rank" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/clustering.py#L133" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Performs hierarchical clustering on a DTW distance matrix and ranks replicas based on cluster assignments.</p>
+<p>This function takes a DTW distance matrix, performs hierarchical clustering using Ward’s linkage,
+determines an optimal cluster cut using the elbow method, plots the dendrogram, and assigns
+replicas to clusters. It then returns a dictionary mapping replica names to their cluster IDs.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>dtw_matrix_df (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame representing the DTW distance matrix.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to the output directory for saving the dendrogram plot.</p>
+</dd>
+<dt><em>plot_format (str)</em>:</dt><dd><p>The file format for saving the plot (e.g., ‘png’, ‘pdf’).</p>
+</dd>
+<dt><em>verbose (bool)</em>:</dt><dd><p>If True, enables verbose output (e.g., printing cluster information).</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Dict</em>:</dt><dd><p>A dictionary mapping replica names to their cluster IDs.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="elbow-method-cut">
+<h3><code class="docutils literal notranslate"><span class="pre">elbow_method_cut</span></code><a class="headerlink" href="#elbow-method-cut" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/clustering.py#L13" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Extract from teh linkage matrix the largest gap between distances to find the elbow point.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>linkage_matrix (np.ndarray)</em>:</dt><dd><p>The linkage matrix from hierarchical clustering.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>float</em>:</dt><dd><p>The index of the elbow point.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="map-link-to-data">
+<h3><code class="docutils literal notranslate"><span class="pre">map_link_to_data</span></code><a class="headerlink" href="#map-link-to-data" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/clustering.py#L80" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Maps the linkage matrix from hierarchical clustering to the original data points (replica names).</p>
+<p>This function takes a linkage matrix produced by hierarchical clustering and a list of replica
+names, and it constructs a dictionary that maps each step of the clustering process to the
+corresponding clusters of data points.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>linkage_matrix (np.ndarray)</em>:</dt><dd><p>A NumPy array representing the linkage matrix from hierarchical clustering.</p>
+</dd>
+<dt><em>rep_names (np.ndarray)</em>:</dt><dd><p>A NumPy array containing the original replica names.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>Dict</em>:</dt><dd><p>A dictionary where keys are the step indices of the linkage matrix, and values are lists of two clusters (each cluster is a list of replica names) merged at that step.</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+<section id="plot-utils">
+<h2>Plot Utils<a class="headerlink" href="#plot-utils" title="Link to this heading">¶</a></h2>
+<hr class="text-linebreak"><section id="plot-emb-rep">
+<h3><code class="docutils literal notranslate"><span class="pre">plot_emb_rep</span></code><a class="headerlink" href="#plot-emb-rep" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/plotUtils.py#L15" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Plots the 2D embeddings of replicas, colored by replica and frame.</p>
+<p>This function generates two scatter plots: one showing the embeddings colored by replica,
+and the other showing the embeddings colored by frame number.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>emb_subg (np.ndarray)</em>:</dt><dd><p>A NumPy array containing the 2D embeddings of subgraphs.</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing metadata about the embeddings.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to the output directory where the plot will be saved.</p>
+</dd>
+<dt><em>plot_format (str)</em>:</dt><dd><p>The file format for saving the plot (e.g., ‘png’, ‘pdf’).</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="plot-emb-bary">
+<h3><code class="docutils literal notranslate"><span class="pre">plot_emb_bary</span></code><a class="headerlink" href="#plot-emb-bary" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/plotUtils.py#L74" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Plots the 2D embeddings of the barycenter, showing both points and a line representation.</p>
+<p>This function generates a figure with two subplots. The first subplot displays the barycenter points
+as scatter points, while the second subplot connects the points with a line, visualizing the
+trajectory of the barycenter embedding.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>emb_data (np.ndarray)</em>:</dt><dd><p>A NumPy array containing the 2D embeddings of the data, including the barycenter.</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing metadata about the embeddings, including ‘Rep’ (replica name) and ‘Frame’ columns.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to the output directory where the plot will be saved.</p>
+</dd>
+<dt><em>plot_format (str)</em>:</dt><dd><p>The file format for saving the plot (e.g., ‘png’, ‘pdf’).</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="plot-pruning">
+<h3><code class="docutils literal notranslate"><span class="pre">plot_pruning</span></code><a class="headerlink" href="#plot-pruning" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/plotUtils.py#L238" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Plots the iterative pruning process, showing the embeddings of replicas and barycenters at each step.</p>
+<p>This function visualizes the iterative pruning of replicas. It generates a grid of subplots,
+where each subplot represents a step in the pruning process. It plots the embeddings of the
+remaining replicas and the barycenter at each step, using distinct colors for each replica.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>subgraphs_emb (List[List[float]])</em>:</dt><dd><p>A list containing the embeddings of subgraphs for each replica.</p>
+</dd>
+<dt><em>barycenters (np.ndarray)</em>:</dt><dd><p>A NumPy array containing the barycenters calculated at each step.</p>
+</dd>
+<dt><em>meta_data (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing metadata about the embeddings.</p>
+</dd>
+<dt><em>replica_ranks (pd.DataFrame)</em>:</dt><dd><p>A pandas DataFrame containing the ranking of replicas.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to the output directory where the plot will be saved.</p>
+</dd>
+<dt><em>plot_format (str)</em>:</dt><dd><p>The file format for saving the plot (e.g., ‘png’, ‘pdf’).</p>
+</dd>
+<dt><em>workers (int)</em>:</dt><dd><p>Number of workers that SpectralEmbedding is allowed to use.</p>
+</dd>
+</dl>
+</div></blockquote>
+<hr class="text-linebreak"></section>
+<section id="plot-dendogram">
+<h3><code class="docutils literal notranslate"><span class="pre">plot_dendogram</span></code><a class="headerlink" href="#plot-dendogram" title="Link to this heading">¶</a></h3>
+<p><a href="https://github.com/mazzalab/NetMD/blob/main/netmd/plotUtils.py#L337" target="_blank"  style="font-family: monospace; font-size: 10px; color: blue;">source</a></p>
+<p>Plots a dendogram based on the hierarcical clustering linkage matrix.
+The dendrogram is colored based on the clusters formed at a specific cut distance.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="simple">
+<dt><em>linkage_matrix (np.ndarray)</em>:</dt><dd><p>The linkage matrix obtained from hierarchical clustering.</p>
+</dd>
+<dt><em>cut_distance_elbow (int)</em>:</dt><dd><p>The index of the cut distance to be used for coloring clusters.</p>
+</dd>
+<dt><em>replica_names (np.ndarray)</em>:</dt><dd><p>The names of the replicas.</p>
+</dd>
+<dt><em>out_path (str)</em>:</dt><dd><p>The path to save the dendrogram plot.</p>
+</dd>
+<dt><em>plot_format (str)</em>:</dt><dd><p>The file format for saving the plot (e.g., ‘png’, ‘pdf’).</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="quickstart_notebook.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quickstart with Notebook</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Manuel &amp; Michele
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Reference Manual</a><ul>
+<li><a class="reference internal" href="#usage-and-help">Usage and Help</a></li>
+<li><a class="reference internal" href="#program-workflow">Program Workflow</a><ul>
+<li><a class="reference internal" href="#matplot-logo-plots-generated"> Plots Generated</a></li>
+<li><a class="reference internal" href="#tsv-logo-files-created"> Files Created</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#netmd-reference">NetMD Reference</a><ul>
+<li><a class="reference internal" href="#create-parser"><code class="docutils literal notranslate"><span class="pre">create_parser</span></code></a></li>
+<li><a class="reference internal" href="#check-entropy"><code class="docutils literal notranslate"><span class="pre">check_entropy</span></code></a></li>
+<li><a class="reference internal" href="#iterate-replica-files"><code class="docutils literal notranslate"><span class="pre">iterate_replica_files</span></code></a></li>
+<li><a class="reference internal" href="#crawl-replica-files"><code class="docutils literal notranslate"><span class="pre">crawl_replica_files</span></code></a></li>
+<li><a class="reference internal" href="#load-data"><code class="docutils literal notranslate"><span class="pre">load_data</span></code></a></li>
+<li><a class="reference internal" href="#compute-entropy"><code class="docutils literal notranslate"><span class="pre">compute_entropy</span></code></a></li>
+<li><a class="reference internal" href="#process-file"><code class="docutils literal notranslate"><span class="pre">process_file</span></code></a></li>
+<li><a class="reference internal" href="#parse-config"><code class="docutils literal notranslate"><span class="pre">parse_config</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#embedding">Embedding</a><ul>
+<li><a class="reference internal" href="#g2v-fit-transform"><code class="docutils literal notranslate"><span class="pre">g2v_fit_transform</span></code></a></li>
+<li><a class="reference internal" href="#entropy-filter"><code class="docutils literal notranslate"><span class="pre">entropy_filter</span></code></a></li>
+<li><a class="reference internal" href="#dtw-mapping"><code class="docutils literal notranslate"><span class="pre">dtw_mapping</span></code></a></li>
+<li><a class="reference internal" href="#iterative-pruning"><code class="docutils literal notranslate"><span class="pre">iterative_pruning</span></code></a></li>
+<li><a class="reference internal" href="#dim-reduction"><code class="docutils literal notranslate"><span class="pre">dim_reduction</span></code></a></li>
+<li><a class="reference internal" href="#iterative-dim-reduction"><code class="docutils literal notranslate"><span class="pre">iterative_dim_reduction</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clustering">Clustering</a><ul>
+<li><a class="reference internal" href="#compute-dtwmatrix"><code class="docutils literal notranslate"><span class="pre">compute_dtwmatrix</span></code></a></li>
+<li><a class="reference internal" href="#normalized-dtw"><code class="docutils literal notranslate"><span class="pre">normalized_dtw</span></code></a></li>
+<li><a class="reference internal" href="#hierarchical-clustering-rank"><code class="docutils literal notranslate"><span class="pre">hierarchical_clustering_rank</span></code></a></li>
+<li><a class="reference internal" href="#elbow-method-cut"><code class="docutils literal notranslate"><span class="pre">elbow_method_cut</span></code></a></li>
+<li><a class="reference internal" href="#map-link-to-data"><code class="docutils literal notranslate"><span class="pre">map_link_to_data</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plot-utils">Plot Utils</a><ul>
+<li><a class="reference internal" href="#plot-emb-rep"><code class="docutils literal notranslate"><span class="pre">plot_emb_rep</span></code></a></li>
+<li><a class="reference internal" href="#plot-emb-bary"><code class="docutils literal notranslate"><span class="pre">plot_emb_bary</span></code></a></li>
+<li><a class="reference internal" href="#plot-pruning"><code class="docutils literal notranslate"><span class="pre">plot_pruning</span></code></a></li>
+<li><a class="reference internal" href="#plot-dendogram"><code class="docutils literal notranslate"><span class="pre">plot_dendogram</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

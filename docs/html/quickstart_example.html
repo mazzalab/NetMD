@@ -1,0 +1,2127 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Quickstart with Notebook" href="quickstart_notebook.html" /><link rel="prev" title="Quickstart" href="quickstart.html" />
+
+    <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.08.06 -->
+        <title>Quickstart by Example - NetMD Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e39fa483" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">NetMD Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static//img/netmd_logo_def.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static//img/netmd_logo_def.png" alt="Dark Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">NetMD Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Quickstart by Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart_notebook.html">Quickstart with Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference Manual</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/quickstart_example.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="quickstart-by-example">
+<span id="quickstart-example"></span><h1>Quickstart by Example<a class="headerlink" href="#quickstart-by-example" title="Link to this heading">¶</a></h1>
+<hr class="text-linebreak"><section id="netmd-example">
+<h2>NetMD Example<a class="headerlink" href="#netmd-example" title="Link to this heading">¶</a></h2>
+<img alt="Example" class="align-right" src="_images/glut_R333_2.png" style="width: 30%;" />
+<p>We present a practical example to demonstrates NetMD’s workflow, from start to finish, using a real-world dataset.</p>
+<p>The study involves the conformational transition of the <strong>GLUT1</strong> protein from the <cite>outward-open</cite> to the <cite>inward-open</cite> state a process closely linked to the glucose transport pathway. Here, we characterized the conformational transition of the <strong>R333Q</strong> (“Arg333Gln”) mutant GLUT1,
+starting from outward-open conformations with glucose bound in its pocket, obtained through multiple Supervised Molecular Dynamics (SuMD [<a href="https://doi.org/10.1007/978-1-4939-8630-9_17" target="_blank">1</a>]) simulations.
+Using a Targeted Molecular Dynamics (TMD) approach, we then gradually guided the glucose toward the cytoplasmic side.</p>
+<p>To ensure an accurate representation of these major conformational changes, we performed simulations with <strong>eight independent replicas</strong>.</p>
+<p>All the files related to this example are located in the <code class="docutils literal notranslate"><span class="pre">example</span></code> directory of the NetMD repository.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="get-md-contacts">
+<h3>1.  <strong>Get MD Contacts</strong>:<a class="headerlink" href="#get-md-contacts" title="Link to this heading">¶</a></h3>
+<p>First the residue-residue contacts need to be extracted from the raw MD data of each replica. In this example we already have the residue-residue contacts extracted from the MD trajectories with <a href="https://getcontacts.github.io" target="_blank">GetContacts</a> by using the following command line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>python3<span class="w"> </span>get_dynamic_contacts.py<span class="w">  </span>--topology<span class="w"> </span>topology_2.pdb<span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--trajectory<span class="w"> </span>r333q_2.xtc<span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--stride<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--cores<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--sele<span class="w"> </span><span class="s2">&quot;protein&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--sele2<span class="w"> </span><span class="s2">&quot;protein&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--itypes<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+<span class="w">                                         </span>--output<span class="w"> </span>FullReplica2_r333q.tsv
+</pre></div>
+</div>
+<p>This will produce a <em>tsv</em> file containing the residue-residue contacts for your trajectory. Here a small snippet of the output file:</p>
+<div class="scrollable-table docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>frame</p></th>
+<th class="head"><p>interaction_type</p></th>
+<th class="head"><p>atom_1</p></th>
+<th class="head"><p>atom_2[, atom_3[, atom_4]]</p></th>
+<th class="head"><p>distance_1-2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:GLU:213:OE1</p></td>
+<td><p>X:LYS:237:NZ</p></td>
+<td><p>2.653</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ASP:176:OD2</p></td>
+<td><p>X:LYS:175:NZ</p></td>
+<td><p>3.851</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:241:NH1</p></td>
+<td><p>X:GLU:238:OE1</p></td>
+<td><p>2.999</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:224:NH2</p></td>
+<td><p>X:ASP:232:OD1</p></td>
+<td><p>3.729</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:215:NH2</p></td>
+<td><p>X:GLU:212:OE1</p></td>
+<td><p>2.813</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:326:NH2</p></td>
+<td><p>X:GLU:446:OE1</p></td>
+<td><p>3.654</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:204:NH1</p></td>
+<td><p>X:GLU:239:OE1</p></td>
+<td><p>3.853</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:204:NH1</p></td>
+<td><p>X:GLU:239:OE2</p></td>
+<td><p>2.773</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:204:NH2</p></td>
+<td><p>X:GLU:239:OE1</p></td>
+<td><p>3.772</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ARG:204:NH2</p></td>
+<td><p>X:GLU:239:OE2</p></td>
+<td><p>2.991</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ASP:176:OD1</p></td>
+<td><p>X:LYS:175:NZ</p></td>
+<td><p>2.590</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>sb</p></td>
+<td><p>X:ASP:232:OD2</p></td>
+<td><p>X:HSD:231:ND1</p></td>
+<td><p>2.877</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>For more information on refer to the GetContacts <a href="https://github.com/getcontacts/getcontacts" target="_blank">GitHub page</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="launch-netmd">
+<h3>2.  <strong>Launch NetMD</strong>:<a class="headerlink" href="#launch-netmd" title="Link to this heading">¶</a></h3>
+<p>Launch NetMD by providing the required input files. You can either list files directly on the command line or specify a directory and prefix for recursive exploration.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Sequence of Files</label><div class="tab-content docutils container">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>netmd<span class="w"> </span>-F<span class="w"> </span>FullReplica2_r333q.tsv<span class="w"> </span>FullReplica3_r333q.tsv<span class="w"> </span>FullReplica4_r333q.tsv<span class="w"> </span>FullReplica5_r333q.tsv<span class="w"> </span>FullReplica7_r333q.tsv<span class="w"> </span>FullReplica8_r333q.tsv<span class="w"> </span>FullReplica9_r333q.tsv<span class="w"> </span>FullReplica10_r333q.tsv<span class="w"> </span>-o<span class="w"> </span>./results<span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-c<span class="w"> </span>config_g2v.yml<span class="w"> </span>--verbose
+</pre></div>
+</div>
+<p>NetMD will iterate over the list of files and generate the embeddings for each one using the set parameters. The <a href="https://github.com/mazzalab/NetMD/blob/main/conf/config_g2v.yml" target="_blank">config_g2v.yml</a> file contains the arguments for Graph2VeC:</p>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Directory Tree</label><div class="tab-content docutils container">
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>netmd<span class="w"> </span>-I<span class="w"> </span>tutorial/GLUT1_R333Q<span class="w"> </span>FullReplica<span class="w"> </span>-o<span class="w"> </span>./results<span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-c<span class="w"> </span>config_g2v.yml<span class="w"> </span>--verbose
+</pre></div>
+</div>
+<p>NetMD will recursivly explore the directory tree starting from <code class="docutils literal notranslate"><span class="pre">R333Q</span></code> and generate the embeddings for each file with the prefix <cite>FullReplica</cite>. The <a href="https://github.com/mazzalab/NetMD/blob/main/conf/config_g2v.yml" target="_blank">config_g2v.yml</a> file contains the arguments for Graph2Vec:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">-I</span></code> option will only work if the input files are in the same directory. If you have files in different directories, you can use the <code class="docutils literal notranslate"><span class="pre">-F</span></code> option to specify them.</p>
+</div>
+</div>
+</div>
+<p>To learn more about the available command line options:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(env)</span> <span class="gp">$ </span>netmd<span class="w"> </span>-h
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="analyze-results">
+<h3>3. <strong>Analyze Results</strong>:<a class="headerlink" href="#analyze-results" title="Link to this heading">¶</a></h3>
+<p>In this section, we will provide a brief overview of the most important files generated by NetMD.</p>
+<ul>
+<li><p><strong>Embeddings for each MD replica frame.</strong></p>
+<figure class="align-center">
+<img alt="replica embedding" src="_images/replica_embedding.svg" width="100%" /></figure>
+<p>From the first plot, we can see the embeddings of each frame of the eight replicas projected on two dimesion. The model is able to reconstruct distinct trajectories with the correct temporal order. From the shape of the plot it can be observed the the effect of the TMD approach, which guides the conformation of the system to a desired and shared state.
+The replicas mainly differ in the inter states between <em>outward-open</em> and <em>inward-open</em>. To find a common consensus of the replicas, we can use the barycenter of the embeddings.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<figure class="align-center">
+<img alt="replica embedding with batycenter" src="_images/barycenter_embedding.svg" width="100%" /></figure>
+<p>The second plot shows the barycenter of the embeddings, which minimizes the sum of squared distances to the time series of the eight replicas.</p>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>The filtered graph representation used to generate the embeddings.</strong></p></li>
+</ul>
+<div style="float: right; width: 29%; margin-left: 15px; margin-bottom: 15px;">
+    <img src="_static/img/Glut1R333Q/subgraph3.png" alt="protein_graph" style="width: 100%;">
+</div><p>To facilitate further analysis and enable users to explore the data beyond the generated embeddings,
+we also provide access to the underlying graph structures themselves.</p>
+<p>These saved graphs have already been processed using the entropy filter.
+Each node is annotated with its corresponding residue number, linking it directly back to the protein’s primary sequence.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p><strong>The dynamic time warping (DTW) mapping between the frames and the barycenter.</strong></p></li>
+</ul>
+<p>This output illustrates the synchronization of the potentially time-shifted or rate-varying trajectories by aligning each one to a common reference timeline,
+known as a barycenter, which represents an average or consensus trajectory. The alignment itself is achieved using the robust <strong>Dynamic Time Warping</strong> (DTW) [<a href="https://tslearn.readthedocs.io/en/stable/user_guide/dtw.html" target="_blank">2</a>] algorithm.</p>
+<p>The table contains the mapping detailing which frame in the replica corresponds to which frame in the calculated barycenter, along with the calculated DTW distance.
+This allows for a comprehensive understanding of the alignment process and the degree of similarity between the trajectories and the barycenter.</p>
+<div class="scrollable-table-dtw docutils container">
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>&lt;FullReplica2_r333q.tsv&gt;</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>25</p></td>
+<td><p>26</p></td>
+<td><p>27</p></td>
+<td><p>28</p></td>
+<td><p>29</p></td>
+<td><p>30</p></td>
+<td><p>31</p></td>
+<td><p>32</p></td>
+<td><p>33</p></td>
+<td><p>34</p></td>
+<td><p>35</p></td>
+<td><p>36</p></td>
+<td><p>37</p></td>
+<td><p>38</p></td>
+<td><p>39</p></td>
+<td><p>40</p></td>
+<td><p>41</p></td>
+<td><p>42</p></td>
+<td><p>43</p></td>
+<td><p>44</p></td>
+<td><p>45</p></td>
+<td><p>46</p></td>
+<td><p>47</p></td>
+<td><p>48</p></td>
+<td><p>49</p></td>
+<td><p>50</p></td>
+<td><p>51</p></td>
+<td><p>52</p></td>
+<td><p>53</p></td>
+<td><p>54</p></td>
+<td><p>55</p></td>
+<td><p>56</p></td>
+<td><p>57</p></td>
+<td><p>58</p></td>
+<td><p>59</p></td>
+<td><p>60</p></td>
+<td><p>61</p></td>
+<td><p>62</p></td>
+<td><p>63</p></td>
+<td><p>64</p></td>
+<td><p>65</p></td>
+<td><p>66</p></td>
+<td><p>67</p></td>
+<td><p>68</p></td>
+<td><p>69</p></td>
+<td><p>70</p></td>
+<td><p>71</p></td>
+<td><p>72</p></td>
+<td><p>73</p></td>
+<td><p>74</p></td>
+<td><p>75</p></td>
+<td><p>76</p></td>
+<td><p>77</p></td>
+<td><p>78</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>82</p></td>
+<td><p>83</p></td>
+<td><p>84</p></td>
+<td><p>85</p></td>
+<td><p>86</p></td>
+<td><p>87</p></td>
+<td><p>88</p></td>
+<td><p>89</p></td>
+<td><p>90</p></td>
+<td><p>91</p></td>
+<td><p>92</p></td>
+<td><p>93</p></td>
+<td><p>94</p></td>
+<td><p>95</p></td>
+<td><p>96</p></td>
+<td><p>97</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+<td><p>100</p></td>
+<td><p>101</p></td>
+<td><p>102</p></td>
+<td><p>103</p></td>
+<td><p>104</p></td>
+<td><p>105</p></td>
+<td><p>106</p></td>
+<td><p>107</p></td>
+<td><p>108</p></td>
+<td><p>109</p></td>
+<td><p>110</p></td>
+<td><p>111</p></td>
+<td><p>112</p></td>
+<td><p>113</p></td>
+<td><p>114</p></td>
+<td><p>115</p></td>
+<td><p>116</p></td>
+<td><p>117</p></td>
+<td><p>118</p></td>
+<td><p>119</p></td>
+<td><p>120</p></td>
+<td><p>121</p></td>
+<td><p>122</p></td>
+<td><p>123</p></td>
+<td><p>124</p></td>
+<td><p>125</p></td>
+<td><p>126</p></td>
+<td><p>127</p></td>
+<td><p>128</p></td>
+<td><p>129</p></td>
+<td><p>130</p></td>
+<td><p>131</p></td>
+<td><p>132</p></td>
+<td><p>133</p></td>
+<td><p>134</p></td>
+<td><p>135</p></td>
+<td><p>136</p></td>
+<td><p>137</p></td>
+<td><p>138</p></td>
+<td><p>139</p></td>
+<td><p>140</p></td>
+<td><p>141</p></td>
+<td><p>142</p></td>
+<td><p>143</p></td>
+<td><p>144</p></td>
+<td><p>145</p></td>
+<td><p>146</p></td>
+<td><p>147</p></td>
+<td><p>148</p></td>
+<td><p>149</p></td>
+<td><p>150</p></td>
+<td><p>151</p></td>
+<td><p>152</p></td>
+<td><p>153</p></td>
+<td><p>154</p></td>
+<td><p>155</p></td>
+<td><p>156</p></td>
+<td><p>157</p></td>
+<td><p>158</p></td>
+<td><p>159</p></td>
+<td><p>160</p></td>
+<td><p>161</p></td>
+<td><p>162</p></td>
+<td><p>163</p></td>
+<td><p>164</p></td>
+<td><p>165</p></td>
+<td><p>166</p></td>
+<td><p>167</p></td>
+<td><p>168</p></td>
+<td><p>169</p></td>
+<td><p>170</p></td>
+<td><p>171</p></td>
+<td><p>172</p></td>
+<td><p>173</p></td>
+<td><p>174</p></td>
+<td><p>175</p></td>
+<td><p>176</p></td>
+<td><p>177</p></td>
+<td><p>178</p></td>
+<td><p>179</p></td>
+<td><p>180</p></td>
+<td><p>181</p></td>
+<td><p>182</p></td>
+<td><p>183</p></td>
+<td><p>184</p></td>
+<td><p>185</p></td>
+<td><p>186</p></td>
+<td><p>187</p></td>
+<td><p>188</p></td>
+<td><p>189</p></td>
+<td><p>190</p></td>
+<td><p>191</p></td>
+<td><p>192</p></td>
+<td><p>193</p></td>
+<td><p>194</p></td>
+<td><p>195</p></td>
+<td><p>196</p></td>
+<td><p>197</p></td>
+<td><p>198</p></td>
+<td><p>199</p></td>
+<td><p>200</p></td>
+<td><p>201</p></td>
+<td><p>202</p></td>
+<td><p>203</p></td>
+<td><p>204</p></td>
+<td><p>205</p></td>
+<td><p>206</p></td>
+<td><p>207</p></td>
+<td><p>208</p></td>
+<td><p>209</p></td>
+<td><p>210</p></td>
+<td><p>211</p></td>
+<td><p>212</p></td>
+<td><p>213</p></td>
+<td><p>214</p></td>
+<td><p>215</p></td>
+<td><p>216</p></td>
+<td><p>217</p></td>
+<td><p>218</p></td>
+<td><p>219</p></td>
+<td><p>220</p></td>
+<td><p>221</p></td>
+<td><p>222</p></td>
+<td><p>223</p></td>
+<td><p>224</p></td>
+<td><p>225</p></td>
+<td><p>226</p></td>
+<td><p>227</p></td>
+<td><p>228</p></td>
+<td><p>229</p></td>
+<td><p>230</p></td>
+<td><p>231</p></td>
+<td><p>232</p></td>
+<td><p>233</p></td>
+<td><p>234</p></td>
+<td><p>235</p></td>
+<td><p>236</p></td>
+<td><p>237</p></td>
+<td><p>238</p></td>
+<td><p>239</p></td>
+<td><p>240</p></td>
+<td><p>241</p></td>
+<td><p>242</p></td>
+<td><p>243</p></td>
+<td><p>244</p></td>
+<td><p>245</p></td>
+<td><p>246</p></td>
+<td><p>247</p></td>
+<td><p>248</p></td>
+<td><p>249</p></td>
+<td><p>250</p></td>
+<td><p>251</p></td>
+<td><p>252</p></td>
+<td><p>253</p></td>
+<td><p>254</p></td>
+<td><p>255</p></td>
+<td><p>256</p></td>
+<td><p>257</p></td>
+<td><p>258</p></td>
+<td><p>259</p></td>
+<td><p>260</p></td>
+<td><p>261</p></td>
+<td><p>262</p></td>
+<td><p>263</p></td>
+<td><p>264</p></td>
+<td><p>265</p></td>
+<td><p>266</p></td>
+<td><p>267</p></td>
+<td><p>268</p></td>
+<td><p>269</p></td>
+<td><p>270</p></td>
+<td><p>271</p></td>
+<td><p>272</p></td>
+<td><p>273</p></td>
+<td><p>274</p></td>
+<td><p>275</p></td>
+<td><p>276</p></td>
+<td><p>277</p></td>
+<td><p>278</p></td>
+<td><p>279</p></td>
+<td><p>280</p></td>
+<td><p>281</p></td>
+<td><p>282</p></td>
+<td><p>283</p></td>
+<td><p>284</p></td>
+<td><p>285</p></td>
+<td><p>286</p></td>
+<td><p>287</p></td>
+<td><p>288</p></td>
+<td><p>289</p></td>
+<td><p>290</p></td>
+<td><p>291</p></td>
+<td><p>292</p></td>
+<td><p>293</p></td>
+<td><p>294</p></td>
+<td><p>295</p></td>
+<td><p>296</p></td>
+<td><p>297</p></td>
+<td><p>298</p></td>
+<td><p>299</p></td>
+<td><p>300</p></td>
+<td><p>301</p></td>
+<td><p>302</p></td>
+<td><p>303</p></td>
+<td><p>304</p></td>
+<td><p>305</p></td>
+<td><p>306</p></td>
+<td><p>307</p></td>
+<td><p>308</p></td>
+<td><p>309</p></td>
+<td><p>310</p></td>
+<td><p>311</p></td>
+<td><p>312</p></td>
+<td><p>313</p></td>
+<td><p>314</p></td>
+<td><p>315</p></td>
+<td><p>316</p></td>
+<td><p>317</p></td>
+<td><p>318</p></td>
+<td><p>319</p></td>
+<td><p>320</p></td>
+<td><p>321</p></td>
+<td><p>322</p></td>
+<td><p>323</p></td>
+<td><p>324</p></td>
+<td><p>325</p></td>
+<td><p>326</p></td>
+<td><p>327</p></td>
+<td><p>328</p></td>
+<td><p>329</p></td>
+<td><p>330</p></td>
+<td><p>331</p></td>
+<td><p>332</p></td>
+<td><p>333</p></td>
+<td><p>334</p></td>
+<td><p>335</p></td>
+<td><p>336</p></td>
+<td><p>337</p></td>
+<td><p>338</p></td>
+<td><p>339</p></td>
+<td><p>340</p></td>
+<td><p>341</p></td>
+<td><p>342</p></td>
+<td><p>343</p></td>
+<td><p>344</p></td>
+<td><p>345</p></td>
+<td><p>346</p></td>
+<td><p>347</p></td>
+<td><p>348</p></td>
+<td><p>349</p></td>
+<td><p>350</p></td>
+<td><p>351</p></td>
+<td><p>352</p></td>
+<td><p>353</p></td>
+<td><p>354</p></td>
+<td><p>355</p></td>
+<td><p>356</p></td>
+<td><p>357</p></td>
+<td><p>357</p></td>
+<td><p>358</p></td>
+<td><p>359</p></td>
+<td><p>360</p></td>
+<td><p>361</p></td>
+<td><p>362</p></td>
+<td><p>363</p></td>
+<td><p>364</p></td>
+<td><p>365</p></td>
+<td><p>366</p></td>
+<td><p>367</p></td>
+<td><p>368</p></td>
+<td><p>369</p></td>
+<td><p>370</p></td>
+<td><p>371</p></td>
+<td><p>372</p></td>
+<td><p>373</p></td>
+<td><p>374</p></td>
+<td><p>375</p></td>
+<td><p>376</p></td>
+<td><p>377</p></td>
+<td><p>378</p></td>
+<td><p>379</p></td>
+<td><p>380</p></td>
+<td><p>381</p></td>
+<td><p>382</p></td>
+<td><p>383</p></td>
+<td><p>384</p></td>
+<td><p>385</p></td>
+<td><p>386</p></td>
+<td><p>387</p></td>
+<td><p>388</p></td>
+<td><p>389</p></td>
+<td><p>390</p></td>
+<td><p>391</p></td>
+<td><p>392</p></td>
+<td><p>393</p></td>
+<td><p>394</p></td>
+<td><p>395</p></td>
+<td><p>396</p></td>
+<td><p>397</p></td>
+<td><p>398</p></td>
+<td><p>399</p></td>
+<td><p>400</p></td>
+<td><p>401</p></td>
+<td><p>402</p></td>
+<td><p>403</p></td>
+<td><p>404</p></td>
+<td><p>405</p></td>
+<td><p>406</p></td>
+<td><p>407</p></td>
+<td><p>408</p></td>
+<td><p>409</p></td>
+<td><p>410</p></td>
+<td><p>411</p></td>
+<td><p>412</p></td>
+<td><p>413</p></td>
+<td><p>414</p></td>
+<td><p>415</p></td>
+<td><p>416</p></td>
+<td><p>417</p></td>
+<td><p>418</p></td>
+<td><p>419</p></td>
+<td><p>420</p></td>
+<td><p>421</p></td>
+<td><p>422</p></td>
+<td><p>423</p></td>
+<td><p>424</p></td>
+<td><p>425</p></td>
+<td><p>426</p></td>
+<td><p>427</p></td>
+<td><p>428</p></td>
+<td><p>429</p></td>
+<td><p>430</p></td>
+<td><p>431</p></td>
+<td><p>432</p></td>
+<td><p>433</p></td>
+<td><p>434</p></td>
+<td><p>435</p></td>
+<td><p>436</p></td>
+<td><p>437</p></td>
+<td><p>438</p></td>
+<td><p>439</p></td>
+<td><p>440</p></td>
+<td><p>441</p></td>
+<td><p>442</p></td>
+<td><p>443</p></td>
+<td><p>444</p></td>
+<td><p>445</p></td>
+<td><p>446</p></td>
+<td><p>447</p></td>
+<td><p>448</p></td>
+<td><p>449</p></td>
+<td><p>450</p></td>
+<td><p>451</p></td>
+<td><p>452</p></td>
+<td><p>453</p></td>
+<td><p>454</p></td>
+<td><p>455</p></td>
+<td><p>456</p></td>
+<td><p>457</p></td>
+<td><p>458</p></td>
+<td><p>459</p></td>
+<td><p>460</p></td>
+<td><p>461</p></td>
+<td><p>462</p></td>
+<td><p>463</p></td>
+<td><p>464</p></td>
+<td><p>465</p></td>
+<td><p>466</p></td>
+<td><p>467</p></td>
+<td><p>468</p></td>
+<td><p>469</p></td>
+<td><p>470</p></td>
+<td><p>471</p></td>
+<td><p>472</p></td>
+<td><p>473</p></td>
+<td><p>474</p></td>
+<td><p>475</p></td>
+<td><p>476</p></td>
+<td><p>477</p></td>
+<td><p>478</p></td>
+<td><p>479</p></td>
+<td><p>480</p></td>
+<td><p>481</p></td>
+<td><p>482</p></td>
+<td><p>483</p></td>
+<td><p>484</p></td>
+<td><p>485</p></td>
+<td><p>486</p></td>
+<td><p>487</p></td>
+<td><p>488</p></td>
+<td><p>489</p></td>
+<td><p>490</p></td>
+<td><p>491</p></td>
+<td><p>492</p></td>
+<td><p>493</p></td>
+<td><p>494</p></td>
+<td><p>495</p></td>
+<td><p>496</p></td>
+<td><p>497</p></td>
+<td><p>498</p></td>
+<td><p>499</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;barycenter&gt;</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>6</p></td>
+<td><p>7</p></td>
+<td><p>8</p></td>
+<td><p>9</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>12</p></td>
+<td><p>13</p></td>
+<td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>16</p></td>
+<td><p>17</p></td>
+<td><p>18</p></td>
+<td><p>19</p></td>
+<td><p>20</p></td>
+<td><p>21</p></td>
+<td><p>22</p></td>
+<td><p>23</p></td>
+<td><p>24</p></td>
+<td><p>25</p></td>
+<td><p>26</p></td>
+<td><p>27</p></td>
+<td><p>28</p></td>
+<td><p>29</p></td>
+<td><p>30</p></td>
+<td><p>31</p></td>
+<td><p>32</p></td>
+<td><p>33</p></td>
+<td><p>34</p></td>
+<td><p>35</p></td>
+<td><p>36</p></td>
+<td><p>37</p></td>
+<td><p>38</p></td>
+<td><p>39</p></td>
+<td><p>40</p></td>
+<td><p>41</p></td>
+<td><p>42</p></td>
+<td><p>43</p></td>
+<td><p>44</p></td>
+<td><p>45</p></td>
+<td><p>46</p></td>
+<td><p>47</p></td>
+<td><p>48</p></td>
+<td><p>49</p></td>
+<td><p>50</p></td>
+<td><p>51</p></td>
+<td><p>52</p></td>
+<td><p>53</p></td>
+<td><p>54</p></td>
+<td><p>55</p></td>
+<td><p>56</p></td>
+<td><p>57</p></td>
+<td><p>58</p></td>
+<td><p>59</p></td>
+<td><p>60</p></td>
+<td><p>61</p></td>
+<td><p>62</p></td>
+<td><p>63</p></td>
+<td><p>64</p></td>
+<td><p>65</p></td>
+<td><p>66</p></td>
+<td><p>67</p></td>
+<td><p>68</p></td>
+<td><p>69</p></td>
+<td><p>70</p></td>
+<td><p>71</p></td>
+<td><p>72</p></td>
+<td><p>73</p></td>
+<td><p>74</p></td>
+<td><p>75</p></td>
+<td><p>76</p></td>
+<td><p>77</p></td>
+<td><p>78</p></td>
+<td><p>79</p></td>
+<td><p>80</p></td>
+<td><p>81</p></td>
+<td><p>82</p></td>
+<td><p>83</p></td>
+<td><p>84</p></td>
+<td><p>85</p></td>
+<td><p>86</p></td>
+<td><p>87</p></td>
+<td><p>88</p></td>
+<td><p>89</p></td>
+<td><p>90</p></td>
+<td><p>91</p></td>
+<td><p>92</p></td>
+<td><p>93</p></td>
+<td><p>94</p></td>
+<td><p>95</p></td>
+<td><p>96</p></td>
+<td><p>97</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+<td><p>100</p></td>
+<td><p>101</p></td>
+<td><p>102</p></td>
+<td><p>103</p></td>
+<td><p>104</p></td>
+<td><p>105</p></td>
+<td><p>106</p></td>
+<td><p>107</p></td>
+<td><p>108</p></td>
+<td><p>109</p></td>
+<td><p>110</p></td>
+<td><p>111</p></td>
+<td><p>112</p></td>
+<td><p>113</p></td>
+<td><p>114</p></td>
+<td><p>115</p></td>
+<td><p>116</p></td>
+<td><p>117</p></td>
+<td><p>118</p></td>
+<td><p>119</p></td>
+<td><p>120</p></td>
+<td><p>121</p></td>
+<td><p>122</p></td>
+<td><p>123</p></td>
+<td><p>124</p></td>
+<td><p>125</p></td>
+<td><p>126</p></td>
+<td><p>127</p></td>
+<td><p>128</p></td>
+<td><p>129</p></td>
+<td><p>130</p></td>
+<td><p>131</p></td>
+<td><p>132</p></td>
+<td><p>133</p></td>
+<td><p>134</p></td>
+<td><p>135</p></td>
+<td><p>136</p></td>
+<td><p>137</p></td>
+<td><p>138</p></td>
+<td><p>139</p></td>
+<td><p>140</p></td>
+<td><p>141</p></td>
+<td><p>142</p></td>
+<td><p>143</p></td>
+<td><p>144</p></td>
+<td><p>145</p></td>
+<td><p>146</p></td>
+<td><p>147</p></td>
+<td><p>148</p></td>
+<td><p>149</p></td>
+<td><p>150</p></td>
+<td><p>151</p></td>
+<td><p>152</p></td>
+<td><p>153</p></td>
+<td><p>154</p></td>
+<td><p>155</p></td>
+<td><p>156</p></td>
+<td><p>157</p></td>
+<td><p>158</p></td>
+<td><p>159</p></td>
+<td><p>160</p></td>
+<td><p>161</p></td>
+<td><p>162</p></td>
+<td><p>163</p></td>
+<td><p>164</p></td>
+<td><p>165</p></td>
+<td><p>166</p></td>
+<td><p>167</p></td>
+<td><p>168</p></td>
+<td><p>169</p></td>
+<td><p>170</p></td>
+<td><p>171</p></td>
+<td><p>172</p></td>
+<td><p>173</p></td>
+<td><p>174</p></td>
+<td><p>175</p></td>
+<td><p>176</p></td>
+<td><p>177</p></td>
+<td><p>178</p></td>
+<td><p>179</p></td>
+<td><p>180</p></td>
+<td><p>181</p></td>
+<td><p>182</p></td>
+<td><p>183</p></td>
+<td><p>184</p></td>
+<td><p>185</p></td>
+<td><p>186</p></td>
+<td><p>187</p></td>
+<td><p>188</p></td>
+<td><p>189</p></td>
+<td><p>190</p></td>
+<td><p>191</p></td>
+<td><p>192</p></td>
+<td><p>193</p></td>
+<td><p>194</p></td>
+<td><p>195</p></td>
+<td><p>196</p></td>
+<td><p>197</p></td>
+<td><p>198</p></td>
+<td><p>199</p></td>
+<td><p>200</p></td>
+<td><p>201</p></td>
+<td><p>202</p></td>
+<td><p>203</p></td>
+<td><p>204</p></td>
+<td><p>205</p></td>
+<td><p>206</p></td>
+<td><p>207</p></td>
+<td><p>208</p></td>
+<td><p>209</p></td>
+<td><p>210</p></td>
+<td><p>211</p></td>
+<td><p>212</p></td>
+<td><p>213</p></td>
+<td><p>214</p></td>
+<td><p>215</p></td>
+<td><p>216</p></td>
+<td><p>217</p></td>
+<td><p>218</p></td>
+<td><p>219</p></td>
+<td><p>220</p></td>
+<td><p>221</p></td>
+<td><p>222</p></td>
+<td><p>223</p></td>
+<td><p>224</p></td>
+<td><p>225</p></td>
+<td><p>226</p></td>
+<td><p>227</p></td>
+<td><p>228</p></td>
+<td><p>229</p></td>
+<td><p>230</p></td>
+<td><p>231</p></td>
+<td><p>232</p></td>
+<td><p>233</p></td>
+<td><p>234</p></td>
+<td><p>235</p></td>
+<td><p>236</p></td>
+<td><p>237</p></td>
+<td><p>238</p></td>
+<td><p>239</p></td>
+<td><p>240</p></td>
+<td><p>241</p></td>
+<td><p>242</p></td>
+<td><p>243</p></td>
+<td><p>244</p></td>
+<td><p>245</p></td>
+<td><p>246</p></td>
+<td><p>247</p></td>
+<td><p>248</p></td>
+<td><p>249</p></td>
+<td><p>250</p></td>
+<td><p>251</p></td>
+<td><p>252</p></td>
+<td><p>253</p></td>
+<td><p>254</p></td>
+<td><p>255</p></td>
+<td><p>256</p></td>
+<td><p>257</p></td>
+<td><p>258</p></td>
+<td><p>259</p></td>
+<td><p>260</p></td>
+<td><p>261</p></td>
+<td><p>262</p></td>
+<td><p>263</p></td>
+<td><p>264</p></td>
+<td><p>265</p></td>
+<td><p>266</p></td>
+<td><p>267</p></td>
+<td><p>268</p></td>
+<td><p>269</p></td>
+<td><p>270</p></td>
+<td><p>271</p></td>
+<td><p>272</p></td>
+<td><p>273</p></td>
+<td><p>274</p></td>
+<td><p>275</p></td>
+<td><p>276</p></td>
+<td><p>277</p></td>
+<td><p>278</p></td>
+<td><p>279</p></td>
+<td><p>280</p></td>
+<td><p>281</p></td>
+<td><p>282</p></td>
+<td><p>283</p></td>
+<td><p>284</p></td>
+<td><p>285</p></td>
+<td><p>286</p></td>
+<td><p>287</p></td>
+<td><p>288</p></td>
+<td><p>289</p></td>
+<td><p>290</p></td>
+<td><p>291</p></td>
+<td><p>292</p></td>
+<td><p>293</p></td>
+<td><p>294</p></td>
+<td><p>295</p></td>
+<td><p>296</p></td>
+<td><p>297</p></td>
+<td><p>298</p></td>
+<td><p>299</p></td>
+<td><p>300</p></td>
+<td><p>301</p></td>
+<td><p>302</p></td>
+<td><p>303</p></td>
+<td><p>304</p></td>
+<td><p>305</p></td>
+<td><p>306</p></td>
+<td><p>307</p></td>
+<td><p>308</p></td>
+<td><p>309</p></td>
+<td><p>310</p></td>
+<td><p>311</p></td>
+<td><p>312</p></td>
+<td><p>313</p></td>
+<td><p>314</p></td>
+<td><p>315</p></td>
+<td><p>316</p></td>
+<td><p>317</p></td>
+<td><p>318</p></td>
+<td><p>319</p></td>
+<td><p>320</p></td>
+<td><p>321</p></td>
+<td><p>322</p></td>
+<td><p>323</p></td>
+<td><p>324</p></td>
+<td><p>325</p></td>
+<td><p>326</p></td>
+<td><p>327</p></td>
+<td><p>328</p></td>
+<td><p>329</p></td>
+<td><p>330</p></td>
+<td><p>331</p></td>
+<td><p>332</p></td>
+<td><p>333</p></td>
+<td><p>334</p></td>
+<td><p>335</p></td>
+<td><p>336</p></td>
+<td><p>337</p></td>
+<td><p>338</p></td>
+<td><p>339</p></td>
+<td><p>340</p></td>
+<td><p>341</p></td>
+<td><p>342</p></td>
+<td><p>343</p></td>
+<td><p>344</p></td>
+<td><p>345</p></td>
+<td><p>346</p></td>
+<td><p>347</p></td>
+<td><p>348</p></td>
+<td><p>349</p></td>
+<td><p>350</p></td>
+<td><p>351</p></td>
+<td><p>352</p></td>
+<td><p>353</p></td>
+<td><p>354</p></td>
+<td><p>355</p></td>
+<td><p>356</p></td>
+<td><p>357</p></td>
+<td><p>358</p></td>
+<td><p>359</p></td>
+<td><p>360</p></td>
+<td><p>360</p></td>
+<td><p>361</p></td>
+<td><p>362</p></td>
+<td><p>363</p></td>
+<td><p>364</p></td>
+<td><p>365</p></td>
+<td><p>366</p></td>
+<td><p>367</p></td>
+<td><p>368</p></td>
+<td><p>369</p></td>
+<td><p>370</p></td>
+<td><p>371</p></td>
+<td><p>372</p></td>
+<td><p>373</p></td>
+<td><p>374</p></td>
+<td><p>375</p></td>
+<td><p>376</p></td>
+<td><p>377</p></td>
+<td><p>378</p></td>
+<td><p>379</p></td>
+<td><p>380</p></td>
+<td><p>381</p></td>
+<td><p>382</p></td>
+<td><p>383</p></td>
+<td><p>384</p></td>
+<td><p>385</p></td>
+<td><p>386</p></td>
+<td><p>387</p></td>
+<td><p>388</p></td>
+<td><p>389</p></td>
+<td><p>390</p></td>
+<td><p>391</p></td>
+<td><p>392</p></td>
+<td><p>393</p></td>
+<td><p>394</p></td>
+<td><p>395</p></td>
+<td><p>396</p></td>
+<td><p>397</p></td>
+<td><p>398</p></td>
+<td><p>399</p></td>
+<td><p>400</p></td>
+<td><p>401</p></td>
+<td><p>402</p></td>
+<td><p>403</p></td>
+<td><p>404</p></td>
+<td><p>405</p></td>
+<td><p>406</p></td>
+<td><p>407</p></td>
+<td><p>408</p></td>
+<td><p>409</p></td>
+<td><p>410</p></td>
+<td><p>411</p></td>
+<td><p>412</p></td>
+<td><p>413</p></td>
+<td><p>414</p></td>
+<td><p>415</p></td>
+<td><p>416</p></td>
+<td><p>417</p></td>
+<td><p>418</p></td>
+<td><p>419</p></td>
+<td><p>420</p></td>
+<td><p>421</p></td>
+<td><p>422</p></td>
+<td><p>423</p></td>
+<td><p>424</p></td>
+<td><p>425</p></td>
+<td><p>426</p></td>
+<td><p>427</p></td>
+<td><p>428</p></td>
+<td><p>429</p></td>
+<td><p>430</p></td>
+<td><p>431</p></td>
+<td><p>432</p></td>
+<td><p>433</p></td>
+<td><p>434</p></td>
+<td><p>435</p></td>
+<td><p>436</p></td>
+<td><p>437</p></td>
+<td><p>438</p></td>
+<td><p>439</p></td>
+<td><p>440</p></td>
+<td><p>441</p></td>
+<td><p>442</p></td>
+<td><p>443</p></td>
+<td><p>444</p></td>
+<td><p>445</p></td>
+<td><p>446</p></td>
+<td><p>447</p></td>
+<td><p>448</p></td>
+<td><p>449</p></td>
+<td><p>450</p></td>
+<td><p>451</p></td>
+<td><p>452</p></td>
+<td><p>453</p></td>
+<td><p>454</p></td>
+<td><p>455</p></td>
+<td><p>456</p></td>
+<td><p>457</p></td>
+<td><p>458</p></td>
+<td><p>459</p></td>
+<td><p>460</p></td>
+<td><p>461</p></td>
+<td><p>462</p></td>
+<td><p>463</p></td>
+<td><p>464</p></td>
+<td><p>465</p></td>
+<td><p>466</p></td>
+<td><p>467</p></td>
+<td><p>468</p></td>
+<td><p>469</p></td>
+<td><p>470</p></td>
+<td><p>471</p></td>
+<td><p>472</p></td>
+<td><p>473</p></td>
+<td><p>474</p></td>
+<td><p>475</p></td>
+<td><p>476</p></td>
+<td><p>477</p></td>
+<td><p>478</p></td>
+<td><p>479</p></td>
+<td><p>480</p></td>
+<td><p>481</p></td>
+<td><p>482</p></td>
+<td><p>483</p></td>
+<td><p>484</p></td>
+<td><p>485</p></td>
+<td><p>486</p></td>
+<td><p>487</p></td>
+<td><p>488</p></td>
+<td><p>489</p></td>
+<td><p>490</p></td>
+<td><p>491</p></td>
+<td><p>492</p></td>
+<td><p>493</p></td>
+<td><p>494</p></td>
+<td><p>495</p></td>
+<td><p>496</p></td>
+<td><p>497</p></td>
+<td><p>498</p></td>
+<td><p>499</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;score&gt;</p></td>
+<td><p>0.9552418949870151</p></td>
+<td><p>0.7056661364711659</p></td>
+<td><p>1.0405166074236338</p></td>
+<td><p>1.1103355732502818</p></td>
+<td><p>0.999316967507964</p></td>
+<td><p>1.152765494228907</p></td>
+<td><p>0.9950657540118084</p></td>
+<td><p>0.9864373231526871</p></td>
+<td><p>0.6597906067064832</p></td>
+<td><p>1.0866071305749632</p></td>
+<td><p>1.2834324215631776</p></td>
+<td><p>1.0679416369024595</p></td>
+<td><p>0.9988338645147402</p></td>
+<td><p>0.8798720877540708</p></td>
+<td><p>0.7727181248919861</p></td>
+<td><p>0.9681168362171071</p></td>
+<td><p>0.9235623052426903</p></td>
+<td><p>0.9441237515175496</p></td>
+<td><p>0.7303320415785013</p></td>
+<td><p>1.1485883699342072</p></td>
+<td><p>0.7224060582374318</p></td>
+<td><p>0.923985101591425</p></td>
+<td><p>0.8299610178430465</p></td>
+<td><p>0.9779619117747534</p></td>
+<td><p>0.8501586971999537</p></td>
+<td><p>0.9358792935691772</p></td>
+<td><p>1.1219734192343451</p></td>
+<td><p>1.058837366279258</p></td>
+<td><p>0.9568631576314547</p></td>
+<td><p>0.9972336685338964</p></td>
+<td><p>1.1579223845904285</p></td>
+<td><p>1.296454261001924</p></td>
+<td><p>1.012354187540849</p></td>
+<td><p>1.0491462046861473</p></td>
+<td><p>0.9114328614576067</p></td>
+<td><p>0.9030529708696786</p></td>
+<td><p>0.9960154424164906</p></td>
+<td><p>0.6886467114665259</p></td>
+<td><p>0.9941404466373173</p></td>
+<td><p>0.723563128373342</p></td>
+<td><p>1.004733066230999</p></td>
+<td><p>0.9103943538192742</p></td>
+<td><p>0.9439863000278155</p></td>
+<td><p>0.943004411837038</p></td>
+<td><p>0.8990881764627008</p></td>
+<td><p>1.076600638423869</p></td>
+<td><p>1.1845736657927812</p></td>
+<td><p>1.2313508589180095</p></td>
+<td><p>0.9384855373590083</p></td>
+<td><p>0.8040155135225092</p></td>
+<td><p>0.7065687257856562</p></td>
+<td><p>0.5914965464435323</p></td>
+<td><p>1.0615649439534312</p></td>
+<td><p>0.9659994812498086</p></td>
+<td><p>0.9600742860229925</p></td>
+<td><p>0.7248816286605031</p></td>
+<td><p>1.0839022431024512</p></td>
+<td><p>0.9303555227562722</p></td>
+<td><p>0.9850689949966652</p></td>
+<td><p>0.7528632972574044</p></td>
+<td><p>1.1065326337800385</p></td>
+<td><p>0.5835338335625908</p></td>
+<td><p>0.9432788228276621</p></td>
+<td><p>0.8195552795399178</p></td>
+<td><p>1.0080085371892527</p></td>
+<td><p>0.7073343459962251</p></td>
+<td><p>1.015169200908876</p></td>
+<td><p>0.9567431827394028</p></td>
+<td><p>1.0168164214807573</p></td>
+<td><p>0.8553490907499207</p></td>
+<td><p>0.9661962948380132</p></td>
+<td><p>0.9013086862794439</p></td>
+<td><p>0.9978949329067855</p></td>
+<td><p>0.9877341695131245</p></td>
+<td><p>1.01095296177873</p></td>
+<td><p>0.741803576873521</p></td>
+<td><p>0.9089097948114733</p></td>
+<td><p>0.839510186957209</p></td>
+<td><p>1.0029519269042662</p></td>
+<td><p>1.0162240591194702</p></td>
+<td><p>1.2777956466623546</p></td>
+<td><p>0.9496037798776863</p></td>
+<td><p>0.7263091600699857</p></td>
+<td><p>1.1209704932690563</p></td>
+<td><p>1.149229173080566</p></td>
+<td><p>0.8599728229130773</p></td>
+<td><p>0.9313856162600072</p></td>
+<td><p>0.917565536035342</p></td>
+<td><p>1.0912348042000002</p></td>
+<td><p>0.962152153406639</p></td>
+<td><p>1.2807604776691448</p></td>
+<td><p>1.0758027950437188</p></td>
+<td><p>1.1142882618919092</p></td>
+<td><p>0.8903252709320956</p></td>
+<td><p>0.7836312763315567</p></td>
+<td><p>0.8846021436295325</p></td>
+<td><p>0.9462656124959407</p></td>
+<td><p>0.8460931678273204</p></td>
+<td><p>1.1033186017998244</p></td>
+<td><p>0.7309161531930822</p></td>
+<td><p>1.0534524691971479</p></td>
+<td><p>0.9514277402782155</p></td>
+<td><p>0.7849936268711737</p></td>
+<td><p>0.9095816318914675</p></td>
+<td><p>0.764195938301092</p></td>
+<td><p>1.1331600152871129</p></td>
+<td><p>0.656139255741623</p></td>
+<td><p>1.0701161968626542</p></td>
+<td><p>1.0791849847687998</p></td>
+<td><p>0.7982814709011181</p></td>
+<td><p>0.8712553916258382</p></td>
+<td><p>0.5729600701961672</p></td>
+<td><p>1.0143283414782507</p></td>
+<td><p>0.7754173933284785</p></td>
+<td><p>0.6749208098428713</p></td>
+<td><p>0.9283096711681847</p></td>
+<td><p>0.7589957707820612</p></td>
+<td><p>0.5784716191250493</p></td>
+<td><p>0.8358414771456139</p></td>
+<td><p>0.8029508106009203</p></td>
+<td><p>0.845545424797329</p></td>
+<td><p>0.8210906874061782</p></td>
+<td><p>0.8662576224487255</p></td>
+<td><p>1.0161728088873365</p></td>
+<td><p>0.9773556174692274</p></td>
+<td><p>0.8345959049273624</p></td>
+<td><p>1.0731704148647314</p></td>
+<td><p>0.6881690064467768</p></td>
+<td><p>0.7675804101779053</p></td>
+<td><p>0.960126468093403</p></td>
+<td><p>0.9215936403394673</p></td>
+<td><p>1.1251970060045073</p></td>
+<td><p>1.025769196316695</p></td>
+<td><p>1.2745210675796241</p></td>
+<td><p>0.9397835438759394</p></td>
+<td><p>0.8887933014107328</p></td>
+<td><p>1.040962935275354</p></td>
+<td><p>0.8914328477116558</p></td>
+<td><p>1.0026059997819747</p></td>
+<td><p>1.0052644201061136</p></td>
+<td><p>0.8988527059855188</p></td>
+<td><p>0.9819791102647805</p></td>
+<td><p>0.8885782345780455</p></td>
+<td><p>0.7854090687866138</p></td>
+<td><p>0.7674419787927683</p></td>
+<td><p>1.0503148871639616</p></td>
+<td><p>1.0957843612481668</p></td>
+<td><p>0.7945843913993061</p></td>
+<td><p>0.6611707527264944</p></td>
+<td><p>0.8169874989451714</p></td>
+<td><p>0.9005365881477874</p></td>
+<td><p>0.7817042567417666</p></td>
+<td><p>0.9453907545921174</p></td>
+<td><p>1.1611477053462789</p></td>
+<td><p>0.5570682373172892</p></td>
+<td><p>1.0379380055014207</p></td>
+<td><p>0.7317647031558209</p></td>
+<td><p>1.2687828385669058</p></td>
+<td><p>1.087528555686582</p></td>
+<td><p>0.9429197264950198</p></td>
+<td><p>1.0710459305823072</p></td>
+<td><p>0.951964739917833</p></td>
+<td><p>0.9809766222756883</p></td>
+<td><p>0.8571762481242221</p></td>
+<td><p>0.9630524641548636</p></td>
+<td><p>1.0668223584895486</p></td>
+<td><p>0.7911781355993766</p></td>
+<td><p>0.8770523073866523</p></td>
+<td><p>0.850408942931492</p></td>
+<td><p>0.6422660267146979</p></td>
+<td><p>0.7505173438435523</p></td>
+<td><p>0.713131238204601</p></td>
+<td><p>0.6590818129944408</p></td>
+<td><p>0.9266766406315041</p></td>
+<td><p>1.0814639822501078</p></td>
+<td><p>0.9859962437781558</p></td>
+<td><p>1.0393197127332934</p></td>
+<td><p>0.9519522445681429</p></td>
+<td><p>0.9790067642081897</p></td>
+<td><p>0.9348738389586809</p></td>
+<td><p>0.655504770091579</p></td>
+<td><p>0.9302867858741943</p></td>
+<td><p>1.140708362524117</p></td>
+<td><p>0.7289505769747319</p></td>
+<td><p>0.8150791208993131</p></td>
+<td><p>0.7235056795176257</p></td>
+<td><p>1.0420233429123198</p></td>
+<td><p>0.49036354370498586</p></td>
+<td><p>0.8049296851976174</p></td>
+<td><p>0.6890888102283732</p></td>
+<td><p>1.0097201743153716</p></td>
+<td><p>0.7461774661310419</p></td>
+<td><p>0.8814613951308904</p></td>
+<td><p>0.6988567768963336</p></td>
+<td><p>1.1077554825298972</p></td>
+<td><p>0.5574792398971118</p></td>
+<td><p>0.843227649002732</p></td>
+<td><p>0.552600142498697</p></td>
+<td><p>0.8824332443070345</p></td>
+<td><p>0.7484390893167515</p></td>
+<td><p>1.0594192715918245</p></td>
+<td><p>0.783914500286382</p></td>
+<td><p>0.918591158813978</p></td>
+<td><p>0.8842258782852245</p></td>
+<td><p>0.6979950950359771</p></td>
+<td><p>0.933008254929914</p></td>
+<td><p>1.0834582734549045</p></td>
+<td><p>0.7855794514579927</p></td>
+<td><p>0.9462669321103157</p></td>
+<td><p>1.1839268015008588</p></td>
+<td><p>0.6575184063915133</p></td>
+<td><p>0.9831242130724198</p></td>
+<td><p>0.8303486747642949</p></td>
+<td><p>1.0905779484789082</p></td>
+<td><p>1.1336240110404554</p></td>
+<td><p>1.0104677866360685</p></td>
+<td><p>0.9639759354539922</p></td>
+<td><p>0.9713362559574813</p></td>
+<td><p>0.901781404989425</p></td>
+<td><p>1.2094432603282288</p></td>
+<td><p>0.9839190892345167</p></td>
+<td><p>0.797232255882393</p></td>
+<td><p>0.7810899036680014</p></td>
+<td><p>1.0144271504581532</p></td>
+<td><p>1.0558172543752942</p></td>
+<td><p>1.0830151882165215</p></td>
+<td><p>0.9571567842869474</p></td>
+<td><p>0.8787420127823802</p></td>
+<td><p>0.9669428091540795</p></td>
+<td><p>0.86998313283677</p></td>
+<td><p>0.8109208744292711</p></td>
+<td><p>1.0191310809327734</p></td>
+<td><p>0.7856573493917842</p></td>
+<td><p>1.0321654025757123</p></td>
+<td><p>0.7275478239521793</p></td>
+<td><p>0.8664685835615882</p></td>
+<td><p>0.944319720265995</p></td>
+<td><p>1.2145373436905411</p></td>
+<td><p>0.8567402814540485</p></td>
+<td><p>0.7416157541751384</p></td>
+<td><p>0.8394612066885341</p></td>
+<td><p>0.5454949556922714</p></td>
+<td><p>0.7584370549217163</p></td>
+<td><p>1.0727125412557366</p></td>
+<td><p>0.612094787222086</p></td>
+<td><p>0.7315884379015843</p></td>
+<td><p>0.7976420238606508</p></td>
+<td><p>1.0913381629858832</p></td>
+<td><p>0.728184162081649</p></td>
+<td><p>1.0426935111558038</p></td>
+<td><p>1.096215130433442</p></td>
+<td><p>0.7771533201193128</p></td>
+<td><p>0.9401209045997821</p></td>
+<td><p>0.8421693547787313</p></td>
+<td><p>0.8309802055861001</p></td>
+<td><p>0.7902697966937796</p></td>
+<td><p>1.0289853613532587</p></td>
+<td><p>0.5900324844220403</p></td>
+<td><p>0.7251410579969455</p></td>
+<td><p>0.9698118845859331</p></td>
+<td><p>0.9187364475942938</p></td>
+<td><p>0.9414198732199672</p></td>
+<td><p>0.8111795542135574</p></td>
+<td><p>1.0153289100050764</p></td>
+<td><p>0.6932810642375881</p></td>
+<td><p>0.9152564460455491</p></td>
+<td><p>0.8594800831726773</p></td>
+<td><p>0.9315592474031954</p></td>
+<td><p>0.8226025005543225</p></td>
+<td><p>0.9780051065497368</p></td>
+<td><p>0.9909943884801169</p></td>
+<td><p>0.7735647470105442</p></td>
+<td><p>1.0748902692046265</p></td>
+<td><p>0.7571562113415051</p></td>
+<td><p>0.8932065061542642</p></td>
+<td><p>1.1060634049915563</p></td>
+<td><p>0.9045755466246536</p></td>
+<td><p>0.9441037420746831</p></td>
+<td><p>1.0523039375473315</p></td>
+<td><p>1.0596063498572186</p></td>
+<td><p>0.9592745670956258</p></td>
+<td><p>1.1083693903793588</p></td>
+<td><p>0.7251475438087781</p></td>
+<td><p>0.7178429230797678</p></td>
+<td><p>0.7784633612893759</p></td>
+<td><p>0.6867462401814476</p></td>
+<td><p>0.9153992628354016</p></td>
+<td><p>0.7203674862660395</p></td>
+<td><p>0.625523045265373</p></td>
+<td><p>0.9312672166246587</p></td>
+<td><p>1.0249880127813038</p></td>
+<td><p>0.9373737891027585</p></td>
+<td><p>1.0957392871758591</p></td>
+<td><p>1.0460421575823708</p></td>
+<td><p>0.6724758548971954</p></td>
+<td><p>0.6637289284208787</p></td>
+<td><p>0.8779847717957343</p></td>
+<td><p>0.7015545863551421</p></td>
+<td><p>0.8950928469997698</p></td>
+<td><p>0.6987184444019774</p></td>
+<td><p>0.7464318402478195</p></td>
+<td><p>0.9958397394791549</p></td>
+<td><p>0.8135247741365422</p></td>
+<td><p>1.1465340050696173</p></td>
+<td><p>0.9413316701884457</p></td>
+<td><p>1.0893211397511096</p></td>
+<td><p>0.7488399023352568</p></td>
+<td><p>0.9968882611680511</p></td>
+<td><p>0.8350722377382982</p></td>
+<td><p>0.8568497007397087</p></td>
+<td><p>1.0288514866953968</p></td>
+<td><p>0.8415723278945635</p></td>
+<td><p>0.7122685708816929</p></td>
+<td><p>1.1139843453106768</p></td>
+<td><p>1.0044495988935618</p></td>
+<td><p>0.946661816635542</p></td>
+<td><p>0.9395839699437675</p></td>
+<td><p>0.8343149732162273</p></td>
+<td><p>0.9898251386253312</p></td>
+<td><p>0.7879714448686648</p></td>
+<td><p>0.8069330035387648</p></td>
+<td><p>0.4373919812588539</p></td>
+<td><p>1.1254176804647307</p></td>
+<td><p>1.31790582351103</p></td>
+<td><p>0.9844153952517566</p></td>
+<td><p>0.7847580023293792</p></td>
+<td><p>0.7794259082095584</p></td>
+<td><p>0.7842714842504446</p></td>
+<td><p>0.7838045995797256</p></td>
+<td><p>1.2109429593164585</p></td>
+<td><p>1.2012101017818428</p></td>
+<td><p>1.0945080222947814</p></td>
+<td><p>0.8127102143327122</p></td>
+<td><p>0.9692528640677097</p></td>
+<td><p>1.2800880655865503</p></td>
+<td><p>0.8796650518299669</p></td>
+<td><p>0.983086188871037</p></td>
+<td><p>0.9173146051220741</p></td>
+<td><p>1.1820010224266104</p></td>
+<td><p>1.0254371194521243</p></td>
+<td><p>0.9625504937927184</p></td>
+<td><p>1.0646248409285815</p></td>
+<td><p>1.081727085775708</p></td>
+<td><p>0.7932419174891465</p></td>
+<td><p>1.0159090413099108</p></td>
+<td><p>0.9302875435710652</p></td>
+<td><p>0.9173218845477434</p></td>
+<td><p>1.2770812379997416</p></td>
+<td><p>0.9587274264444742</p></td>
+<td><p>0.7629731351699496</p></td>
+<td><p>0.9889761534933312</p></td>
+<td><p>0.7415461193522684</p></td>
+<td><p>1.1257461166668463</p></td>
+<td><p>1.0830281282738843</p></td>
+<td><p>1.1504331294148966</p></td>
+<td><p>1.0867260489804917</p></td>
+<td><p>0.9625834005048696</p></td>
+<td><p>0.7198773700158446</p></td>
+<td><p>0.6855995105415189</p></td>
+<td><p>1.1251395723666853</p></td>
+<td><p>0.8440213532605377</p></td>
+<td><p>0.7684691748496674</p></td>
+<td><p>0.6066742470728901</p></td>
+<td><p>0.8641113341866201</p></td>
+<td><p>1.2549418194780533</p></td>
+<td><p>0.884735380112067</p></td>
+<td><p>1.0820065955076024</p></td>
+<td><p>1.1020978420486434</p></td>
+<td><p>0.6791391656707295</p></td>
+<td><p>1.074638885704044</p></td>
+<td><p>0.8813744619172293</p></td>
+<td><p>1.1058897208746752</p></td>
+<td><p>0.9888464693227257</p></td>
+<td><p>1.1524691463303554</p></td>
+<td><p>0.8826688770393608</p></td>
+<td><p>0.8793590627888108</p></td>
+<td><p>0.6294423650125571</p></td>
+<td><p>1.0822843582056434</p></td>
+<td><p>0.6798799991167074</p></td>
+<td><p>0.8754012806529925</p></td>
+<td><p>0.7594812865192523</p></td>
+<td><p>0.9360342037159621</p></td>
+<td><p>0.8614195633954081</p></td>
+<td><p>0.8665194324949542</p></td>
+<td><p>1.0410038593071365</p></td>
+<td><p>0.9176589030843568</p></td>
+<td><p>0.7306437217690146</p></td>
+<td><p>0.9842131376335531</p></td>
+<td><p>1.0244842773234644</p></td>
+<td><p>0.8177304995774748</p></td>
+<td><p>0.7842942059033661</p></td>
+<td><p>0.9198693436826325</p></td>
+<td><p>0.8613500419904893</p></td>
+<td><p>1.0135748075500297</p></td>
+<td><p>1.131822934255715</p></td>
+<td><p>1.0184140927484975</p></td>
+<td><p>0.8347363063269709</p></td>
+<td><p>0.9016404012070242</p></td>
+<td><p>0.7150994650606292</p></td>
+<td><p>0.9627687134733998</p></td>
+<td><p>1.0574167384888813</p></td>
+<td><p>0.7749923035376888</p></td>
+<td><p>0.9767927559120902</p></td>
+<td><p>1.1130566237275854</p></td>
+<td><p>0.8746272123264935</p></td>
+<td><p>0.8005615085441972</p></td>
+<td><p>0.7788127824967912</p></td>
+<td><p>0.7811790594888116</p></td>
+<td><p>1.3504849431751547</p></td>
+<td><p>1.102383722573668</p></td>
+<td><p>0.8323961168046206</p></td>
+<td><p>1.0763370131145589</p></td>
+<td><p>0.8366359705567735</p></td>
+<td><p>1.1209421179556804</p></td>
+<td><p>1.0746006939699941</p></td>
+<td><p>0.8624880410218753</p></td>
+<td><p>0.607366109353785</p></td>
+<td><p>1.276097523280773</p></td>
+<td><p>0.801219743588403</p></td>
+<td><p>0.9224274754222619</p></td>
+<td><p>0.7481469163339742</p></td>
+<td><p>1.0492709286302795</p></td>
+<td><p>0.7874973812911452</p></td>
+<td><p>0.7587540947537286</p></td>
+<td><p>0.978456559803549</p></td>
+<td><p>1.0655592462766414</p></td>
+<td><p>0.8563863234371376</p></td>
+<td><p>0.8147893309445722</p></td>
+<td><p>0.9416082635530898</p></td>
+<td><p>0.6930175738996631</p></td>
+<td><p>0.94174565823688</p></td>
+<td><p>0.967814221176326</p></td>
+<td><p>0.6763467290680909</p></td>
+<td><p>0.8270588102456682</p></td>
+<td><p>0.9166459961044414</p></td>
+<td><p>1.2366335618635635</p></td>
+<td><p>0.6993681554722265</p></td>
+<td><p>0.8719004125205395</p></td>
+<td><p>0.7230856976929284</p></td>
+<td><p>0.8182180621571186</p></td>
+<td><p>0.6705994892590865</p></td>
+<td><p>0.816195322215378</p></td>
+<td><p>1.0587647974139744</p></td>
+<td><p>0.9024087627406416</p></td>
+<td><p>1.108014179592605</p></td>
+<td><p>1.0513758009437029</p></td>
+<td><p>1.0258619416255115</p></td>
+<td><p>0.8661456566683301</p></td>
+<td><p>0.6691147164711685</p></td>
+<td><p>0.7971175103812634</p></td>
+<td><p>0.6972512050176783</p></td>
+<td><p>1.394144158908117</p></td>
+<td><p>0.8087665680680254</p></td>
+<td><p>0.978408680368935</p></td>
+<td><p>1.0091495483232147</p></td>
+<td><p>0.6501155910390297</p></td>
+<td><p>0.8682278607035304</p></td>
+<td><p>0.9480769860043673</p></td>
+<td><p>1.244211817952321</p></td>
+<td><p>0.8124153070923522</p></td>
+<td><p>1.0446899093875963</p></td>
+<td><p>0.7152017196046978</p></td>
+<td><p>0.759442393341725</p></td>
+<td><p>0.9001946321655565</p></td>
+<td><p>0.9595590577603301</p></td>
+<td><p>0.6240698174325028</p></td>
+<td><p>1.0153106801829106</p></td>
+<td><p>0.9121823957300207</p></td>
+<td><p>0.9050807606821821</p></td>
+<td><p>0.937001630104615</p></td>
+<td><p>1.032124694304321</p></td>
+<td><p>1.1185059477299246</p></td>
+<td><p>1.2229473006240612</p></td>
+<td><p>0.9152308632363492</p></td>
+<td><p>1.1432038719104187</p></td>
+<td><p>0.9421222389972256</p></td>
+<td><p>0.6546256004533951</p></td>
+<td><p>1.1300599144672172</p></td>
+<td><p>0.7709890830962984</p></td>
+<td><p>1.1440475885057158</p></td>
+<td><p>1.0170234743151378</p></td>
+<td><p>0.8982709481534079</p></td>
+<td><p>0.8143343387203429</p></td>
+<td><p>0.6916648313350658</p></td>
+<td><p>0.8410722068542067</p></td>
+<td><p>0.881273440106534</p></td>
+<td><p>0.6836157349306331</p></td>
+<td><p>1.029763744232367</p></td>
+<td><p>1.0596022175377349</p></td>
+<td><p>0.9959328400251626</p></td>
+<td><p>0.9520244793457986</p></td>
+<td><p>0.8140390821727681</p></td>
+<td><p>1.3497882526888692</p></td>
+<td><p>1.1472697567801893</p></td>
+<td><p>0.8097335173060682</p></td>
+<td><p>0.7602023014862238</p></td>
+<td><p>1.152321538100992</p></td>
+<td><p>0.6747737307521572</p></td>
+<td><p>0.8382974217456026</p></td>
+<td><p>0.9689902479815178</p></td>
+<td><p>1.2085461367605936</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p><strong>The iterative pruning results of all replicas based on their distance from the barycenter.</strong></p>
+<p>The iterative pruning method is a technique used to rank replicas based on their distance from a barycenter.</p>
+<p>In each iteration, the DTW distance between the barycenter and each replica is calculated.
+The replica farthest from the barycenter is then removed, and the barycenter is recalculated.
+Replicas are ranked based on the iteration at which they were removed, with the first-ranked replica being the closest to the barycenter and the last-ranked being the farthest.</p>
+<p>This process helps to identify the replicas in the ensemble closest to the common consensus.</p>
+<figure class="align-center">
+<img alt="Plot 3" src="_images/iterative_pruning.svg" width="100%" /></figure>
+<p>This ranking is shown in the table below</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Replica Name</p></th>
+<th class="head"><p>Rank</p></th>
+<th class="head"><p>Barycenter Distance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FullReplica9_r333q.tsv</p></td>
+<td><p>0.0</p></td>
+<td><p>0.614938</p></td>
+</tr>
+<tr class="row-odd"><td><p>FullReplica7_r333q.tsv</p></td>
+<td><p>1.0</p></td>
+<td><p>0.614938</p></td>
+</tr>
+<tr class="row-even"><td><p>FullReplica3_r333q.tsv</p></td>
+<td><p>2.0</p></td>
+<td><p>0.823672</p></td>
+</tr>
+<tr class="row-odd"><td><p>FullReplica5_r333q.tsv</p></td>
+<td><p>3.0</p></td>
+<td><p>0.890971</p></td>
+</tr>
+<tr class="row-even"><td><p>FullReplica4_r333q.tsv</p></td>
+<td><p>4.0</p></td>
+<td><p>0.927845</p></td>
+</tr>
+<tr class="row-odd"><td><p>FullReplica10_r333q.tsv</p></td>
+<td><p>5.0</p></td>
+<td><p>0.986553</p></td>
+</tr>
+<tr class="row-even"><td><p>FullReplica6_r333q.tsv</p></td>
+<td><p>6.0</p></td>
+<td><p>1.016571</p></td>
+</tr>
+<tr class="row-odd"><td><p>FullReplica2_r333q.tsv</p></td>
+<td><p>7.0</p></td>
+<td><p>1.261702</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p><strong>The clustering analysis of the replicas.</strong></p>
+<p>Finally, to explore the relationships between replicas, we perform hierarchical clustering based on the distances computed between each time series: to compute the linkage matrix we choose the ward method which aims at minimizing the total within-cluster variance.
+The resulting dendrogram provides a visual representation of the clustering structure, allowing for the identification of groups of similar replicas.
+The y-axis represents the distance between clusters, while the x-axis lists the replicas.
+The height at which two branches merge indicates their similarity, with lower heights indicating greater similarity.</p>
+<p>To select the correct number of clusters we propose two methods:</p>
+<ol class="arabic simple">
+<li><p><strong>The elbow method</strong></p></li>
+<li><p><strong>the largest gap</strong></p></li>
+</ol>
+<figure class="align-center">
+<img alt="dendogram  of replicas" src="_images/dendogram.svg" width="100%" /></figure>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For further details and results, such as change-point detection, check the <a href="https://github.com/mazzalab/NetMD/blob/main/tutorial/netmd_notebook.ipynb" target="_blank">NetMD Notebook</a>.</p>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="quickstart_notebook.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Quickstart with Notebook</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="quickstart.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quickstart</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Manuel &amp; Michele
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart by Example</a><ul>
+<li><a class="reference internal" href="#netmd-example">NetMD Example</a><ul>
+<li><a class="reference internal" href="#get-md-contacts">1.  <strong>Get MD Contacts</strong>:</a></li>
+<li><a class="reference internal" href="#launch-netmd">2.  <strong>Launch NetMD</strong>:</a></li>
+<li><a class="reference internal" href="#analyze-results">3. <strong>Analyze Results</strong>:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

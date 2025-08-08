@@ -234,9 +234,10 @@ This reference manual provides a detailed overview of the functions and classes 
 We provide this manual to help users understand the functionality and underlying works of the program. 
 The manual is organized into sections, each focusing on a specific function or class.
 
-
+===========
 Data Loader
------------
+===========
+
 
 .. raw:: html
 

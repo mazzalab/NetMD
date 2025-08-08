@@ -29,6 +29,10 @@ exclude_patterns = []
 
 
 
+
+html_baseurl = "https://mazzalab.github.io/NetMD/"
+
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 

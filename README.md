@@ -64,7 +64,7 @@ docker run --rm \
 - `-o`: Output directory.
 - `--verbose`: Show more detailed logs.
 
-Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, and other settings. See documentation for more options.
+Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, and other settings. See the [documentation](https://mazzalab.github.io/NetMD) for more options.
 
 ## ✨ Features
 

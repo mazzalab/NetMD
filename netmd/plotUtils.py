@@ -254,9 +254,6 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
 
     """
 
-	# Update metadata adding the barycenter info
-    meta_data = pd.concat([meta_data, pd.DataFrame({'Rep': ['barycenter']*len(barycenters[0]), 'Frame': np.arange(0, len(barycenters[0]))})])
-
     multiple_reduced_emb = iterative_dim_reduction(subgraphs_emb, barycenters, workers)
 
 
@@ -271,15 +268,16 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
     fig, axes = plt.subplots(rows, cols,  figsize=(19, 15))
     axes = axes.flatten()  
 
-    for i, _ in enumerate(barycenters):
+    for i, bary in enumerate(barycenters):
         
         if i == 0:
             replicas = replica_ranks.index
         else:
             replicas = replica_ranks[:-i].index
 
-        reduced_embs = multiple_reduced_emb[i]
-        
+        reduced_graph = multiple_reduced_emb[i][:-len(bary)]
+        barycenter = multiple_reduced_emb[i][-len(bary):]
+
         col = i%cols
 
         if col == 0 and i>0:
@@ -288,8 +286,8 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
         # Plot each replica with color mapped by frames
         for j,replica in enumerate(replicas):
             scatter = axes[row*cols + col].scatter(
-                reduced_embs[ meta_data['Rep'] == replica, 0], 
-                reduced_embs[ meta_data['Rep'] == replica, 1],
+                reduced_graph[ meta_data['Rep'] == replica, 0], 
+                reduced_graph[ meta_data['Rep'] == replica, 1],
                 marker='o', alpha = 0.30, s=10, 
                 label=f'{replica.strip().split("/")[-1]}',
                 color=colors[replica]
@@ -298,8 +296,8 @@ def plot_pruning(subgraphs_emb: List[List[float]], barycenters: np.ndarray, meta
         
         # Highlight the barycenter with a distinct style
         axes[row*cols + col].scatter(
-            reduced_embs[meta_data['Rep'] == 'barycenter', 0], 
-            reduced_embs[meta_data['Rep'] == 'barycenter', 1], 
+            barycenter[:, 0], 
+            barycenter[:, 1], 
             c='black',  # Distinct color for the barycenter
             edgecolor="w",  # Edge color for clarity
             label="Barycenter",

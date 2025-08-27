@@ -27,6 +27,16 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
+# Add the custom sidebar to all pages
+html_sidebars = {
+    "**": [
+        "github_sidebar.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/variant-selector.html",
+    ]
+}
 
 
 

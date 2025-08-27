@@ -86,7 +86,7 @@ Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, a
 
 Explore a complete case study analysis of the Glucose Transporter 1 (GLUT1) using our Jupyter [notebook](https://github.com/mazzalab/NetMD/blob/main/tutorial/netmd_notebook.ipynb), which demonstrates the full NetMD workflow. Feel free to experiment with it and adapt it to suit your needs.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mazzalab/netmd/main?filepath=example/netmd_notebook.ipynb)
+<!-- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mazzalab/netmd/main?filepath=example/netmd_notebook.ipynb) -->
 
 <!-- ## 📚 Documentation
 

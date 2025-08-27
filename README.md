@@ -79,7 +79,7 @@ Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, a
 ## 🛠️ Workflow
 
 <p align="center">
-  <img src="./docs/src_docs/source/_static/img/workflow/Figure1.svg" alt="Workflow diagram" width="80%"/>
+  <img src="./docs/src_docs/source/_static/img/workflow/Figure1.svg" alt="Workflow diagram" width="90%"/>
 </p>
 
 ## 📓 Interactive Analysis Notebook

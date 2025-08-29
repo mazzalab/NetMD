@@ -1,10 +1,11 @@
 
-.netmd-image {
-    display: block;
-    margin: 20px auto;
-    width: 100%; /* Adjust the width as needed */
+/* Furo theme logo size override */
+.sidebar-logo-container img {
+    width: 100% !important;   /* Set your desired width */
+    height: auto !important;
+    max-width: unset !important;
+    max-height: unset !important;
 }
-
 
 .text-linebreak {
     border: none;

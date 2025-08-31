@@ -14,6 +14,7 @@ You can pull `netmd` without installing any dependencies by using the pre-built 
 
 ```bash
 docker pull quay.io/biocontainers/netmd:1.0.2--pyh3c853c9_0
+docker tag quay.io/biocontainers/netmd:1.0.2--pyh3c853c9_0 quay.io/biocontainers/netmd:latest
 ```
 
 Install via Conda:
@@ -44,7 +45,7 @@ or
 ```
 docker run --rm \
   -v $(pwd):/data \
-  quay.io/biocontainers/netmd:1.0.1--pyh3c853c9_0 \
+  quay.io/biocontainers/netmd \
   netmd \
     -F /data/example/GLUT1_WT/FullReplica10_WT.tsv /data/example/GLUT1_WT/FullReplica2_WT.tsv /data/example/GLUT1_WT/FullReplica3_WT.tsv \
     -o /data/results \

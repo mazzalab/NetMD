@@ -79,9 +79,13 @@ Edit `config_g2v.yml` to customize graph2vec parameters, embedding dimensions, a
 
 ## 🛠️ Workflow
 
-<p align="center">
-  <img src="./docs/src_docs/source/_static/img/workflow/Figure1.svg" alt="Workflow diagram" width="90%"/>
-</p>
+<figure style="text-align: center;">
+  <img src="./docs/src_docs/source/_static/img/workflow/Figure1.png" 
+       alt="Workflow diagram" width="90%"/>
+  <figcaption style="text-align: left;" style="font-size: 0.9em; margin-top: 0.5em;">
+    <strong>NetMD workflow.</strong> MD frames are converted into residue–contact graphs with entropy-filtered edges, embedded via a 16-dimensional Graph2Vec model into vectors, and aligned across replicas using DTW barycenter averaging (normalized by series length). Divergent trajectories are pruned, and the clustered frames yield a state transition network. Embeddings from the same system or under different conditions are compared using Ward’s hierarchical clustering method to identify the system-specific dynamic signatures. Change point detection is performed on the best replicas per system to highlight diverging states.
+  </figcaption>
+</figure>
 
 ## 📓 Interactive Analysis Notebook
 

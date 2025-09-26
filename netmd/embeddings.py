@@ -38,7 +38,7 @@ def g2v_fit_transform(g2v_config: Dict, subgraphs: List[nx.Graph]) -> np.ndarray
 
 
 
-def entropy_filter(graphs: list[nx.Graph], entropies: pd.DataFrame, treshold: float) -> List[nx.Graph]:
+def entropy_filter(graphs: list[nx.Graph], entropies: pd.DataFrame, threshold: float) -> List[nx.Graph]:
     """
     Creates subgraphs from a list of graphs, including only edges that meet a specified entropy threshold.
 
@@ -56,7 +56,7 @@ def entropy_filter(graphs: list[nx.Graph], entropies: pd.DataFrame, treshold: fl
                              meet the entropy threshold.
     """
 
-    selected_rows = (entropies > treshold).all(axis=1)
+    selected_rows = (entropies > threshold).all(axis=1)
     edge_list = entropies[selected_rows].index.tolist()
 
     subgraphs = [nx.convert_node_labels_to_integers(g.edge_subgraph(edge_list), first_label=0, ordering='default') for g in graphs]  

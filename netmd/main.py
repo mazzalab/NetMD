@@ -166,7 +166,7 @@ def main(args: argparse.Namespace) -> None:
 	with  open(os.path.join(out_path, 'graphs.pkl'), 'wb') as f:
 		pk.dump(graphs, f)
 
-	entropies.to_csv(os.path.join(out_path, 'entropies.tsv'), sep='\t', index=False)
+	entropies.to_csv(os.path.join(out_path, 'entropies.tsv'), sep='\t')
 
 	# Filter the graphs based on the entropy threshold
 	subgraphs = entropy_filter(graphs, entropies, args.edgeFilter)
@@ -202,7 +202,7 @@ def main(args: argparse.Namespace) -> None:
 	
 	# Save subgraphs to file
 	with open(os.path.join(out_path, 'subgraphs_emb.pkl'), 'wb') as f:
-		pk.dump(replicas_ts, f)
+		pk.dump(subgraphs_emb, f)
 	meta_data.to_csv(os.path.join(out_path, 'metadata.tsv'), sep='\t', index=False)
 	
 	# Compute barycenter 

@@ -33,7 +33,7 @@ Run NetMD on example trajectories:
 
 ```bash
 netmd \
-  -F example/GLUT1_WT/FullReplica10_WT.tsv example/GLUT1_WT/FullReplica2_WT.tsv example/GLUT1_WT/FullReplica3_WT.tsv \
+  -F tutorial/GLUT1_WT/FullReplica10_WT.tsv tutorial/GLUT1_WT/FullReplica2_WT.tsv tutorial/GLUT1_WT/FullReplica3_WT.tsv \
   -o results \
   -e 0.1 \
   -c conf/config_g2v.yml \

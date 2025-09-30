@@ -61,7 +61,6 @@ def entropy_filter(graphs: list[nx.Graph], entropies: pd.DataFrame, threshold: f
 
     subgraphs = [nx.convert_node_labels_to_integers(g.edge_subgraph(edge_list), first_label=0, ordering='default') for g in graphs]  
     
-
     return subgraphs
 
 

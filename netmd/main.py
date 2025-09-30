@@ -170,8 +170,12 @@ def main(args: argparse.Namespace) -> None:
 
 	# Filter the graphs based on the entropy threshold
 	subgraphs = entropy_filter(graphs, entropies, args.edgeFilter)
+
 	with  open(os.path.join(out_path, 'subgraphs.pkl'), 'wb') as f:
 		pk.dump(subgraphs, f)
+
+	del graphs, entropies  # free memory
+
 
 	# ###### Compute Graph2Vec Embeddings ######
 

@@ -223,8 +223,6 @@ Throughout the execution, several plots and files are saved in the *out_path* sp
 - **iterative_ranks.tsv**:
   A file containing the iterative pruning results of all replicas based on their distance from the barycenter.
 
-
-
 ===============
 NetMD Reference
 ===============

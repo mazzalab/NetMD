@@ -13,8 +13,8 @@ NetMD is a computational method for identifying consensus behavior across multip
 You can pull `netmd` without installing any dependencies by using the pre-built Docker image available on Quay.io.
 
 ```bash
-docker pull quay.io/biocontainers/netmd:1.0.2--pyh3c853c9_0
-docker tag quay.io/biocontainers/netmd:1.0.2--pyh3c853c9_0 quay.io/biocontainers/netmd:latest
+docker pull quay.io/biocontainers/netmd:1.0.3--pyh3c853c9_0
+docker tag quay.io/biocontainers/netmd:1.0.3--pyh3c853c9_0 quay.io/biocontainers/netmd:latest
 ```
 
 Install via Conda:

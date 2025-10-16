@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Reference Manual" href="reference_manual.html" /><link rel="prev" title="Quickstart with Notebook" href="quickstart_notebook.html" />
-        <link rel="canonical" href="https://mazzalab.github.io/NetMD/time_performance.html" />
+        <link rel="canonical" href="https://mazzalab.github.io/NetMD/performance.html" />
 
     <link rel="shortcut icon" href="_static/favicon.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.08.06 -->
-        <title>Time Performances - NetMD Documentation</title>
+        <title>Performances - NetMD Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -182,7 +182,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -228,7 +228,7 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart_example.html">Quickstart by Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart_notebook.html">Quickstart with Notebook</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Time Performances</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Performances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference_manual.html">Reference Manual</a></li>
 </ul>
 
@@ -249,7 +249,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="_sources/time_performance.rst.txt" title="View this page">
+  <a class="muted-link" href="_sources/performance.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -263,14 +263,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="time-performances">
-<h1>Time Performances<a class="headerlink" href="#time-performances" title="Link to this heading">¶</a></h1>
+          <section id="performances">
+<h1>Performances<a class="headerlink" href="#performances" title="Link to this heading">¶</a></h1>
 <style>
     table {
         font-size: 15px; /* Adjust the font size as needed */
@@ -280,8 +280,10 @@
     }
 </style>
 
-<hr class="text-linebreak"><p>To give an idea of NetMD’s time performance, we present the results from several runs on a machine equipped with 24 GB of RAM and a 13th Gen Intel(R) Core(TM) i7-13700F (2.10 GHz) CPU.</p>
-<p>The experiments were run with different numbers of replicas (3, 5, and 8), different numbers of frames (100, 250, 350, 500, 750, 1000, and 1500), and two types of scale-free graphs (with a density of 0.01 and 0.03), each composed of 447 nodes. We used three Weisfeiler-Lehman iterations for the Graph2Vec embedding. The value reported in each cell is the mean time in seconds ± the standard deviation over five runs.</p>
+<hr class="text-linebreak"><p>To give an idea of NetMD’s performance, we present the results from several runs on a machine equipped with 24 GB of RAM and a 13th Gen Intel(R) Core(TM) i7-13700F (2.10 GHz) CPU.</p>
+<p>The experiments were run with different numbers of replicas (3, 5, and 8), different numbers of frames (100, 250, 350, 500, 750, 1000, and 1500), and two types of scale-free graphs (with a density of 0.01 and 0.03), each composed of 447 nodes. We used three Weisfeiler-Lehman iterations for the Graph2Vec embedding. The value reported in each cell is the mean ± the standard deviation over five runs.</p>
+<section id="time">
+<h2>Time<a class="headerlink" href="#time" title="Link to this heading">¶</a></h2>
 <p>The table show the time performance in seconds for graphs with density of 0.01 (890 edges on average) on different number of replicas and frames.</p>
 <div class="table-wrapper colwidths-given docutils container" id="id1">
 <table class="docutils align-default" id="id1">
@@ -397,6 +399,123 @@
 </div>
 <img alt="logscale line plot time performance NetMD Image" class="align-center" src="_images/timeplot2.png" style="width: 100%;" />
 </section>
+<section id="memory">
+<h2>Memory<a class="headerlink" href="#memory" title="Link to this heading">¶</a></h2>
+<p>Another crucial aspect of performance is memory usage. NetMD’s memory consumption was monitored during the execution of the same experiments described above. The peak memory usage observed during these runs is summarized in the table below.</p>
+<p>The <strong>peak memory</strong> performance in MB for graphs with density of 0.01 (890 edges on average) on different number of replicas and frames is shown in the table below.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Memory Performance in MB for graph of density 0.01 (transposed)</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Frames</p></th>
+<th class="head"><p>3 Replicas</p></th>
+<th class="head"><p>5 Replicas</p></th>
+<th class="head"><p>8 Replicas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>664.75 ± 33.0</p></td>
+<td><p>724.16 ± 46.1</p></td>
+<td><p>865.21 ± 32.42</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>1382.99 ± 59.52</p></td>
+<td><p>1530.26 ± 77.41</p></td>
+<td><p>1797.31 ± 51.31</p></td>
+</tr>
+<tr class="row-even"><td><p>350</p></td>
+<td><p>1867.43 ± 24.96</p></td>
+<td><p>2126.37 ± 34.69</p></td>
+<td><p>2399.34 ± 60.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>500</p></td>
+<td><p>2606.54 ± 134.81</p></td>
+<td><p>2968.52 ± 108.13</p></td>
+<td><p>3450.45 ± 97.24</p></td>
+</tr>
+<tr class="row-even"><td><p>750</p></td>
+<td><p>3724.95 ± 129.68</p></td>
+<td><p>4361.8 ± 39.46</p></td>
+<td><p>5179.4 ± 85.95</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000</p></td>
+<td><p>4877.62 ± 138.49</p></td>
+<td><p>5578.15 ± 75.46</p></td>
+<td><p>6700.91 ± 187.6</p></td>
+</tr>
+<tr class="row-even"><td><p>1500</p></td>
+<td><p>7596.5 ± 80.1</p></td>
+<td><p>8443.25 ± 109.14</p></td>
+<td><p>9996.24 ± 87.52</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <strong>peak memory</strong> performance in MB for graphs with density of 0.03 (3080 edges on average) on different number of replicas and frames is shown in the table below.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id4">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Memory Performance in MB for graph of density 0.03 (transposed)</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Frames</p></th>
+<th class="head"><p>3 Replicas</p></th>
+<th class="head"><p>5 Replicas</p></th>
+<th class="head"><p>8 Replicas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>100</p></td>
+<td><p>968.8 ± 63.98</p></td>
+<td><p>1100.4 ± 36.65</p></td>
+<td><p>1300.72 ± 46.53</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>2590.53 ± 47.25</p></td>
+<td><p>2782.65 ± 26.02</p></td>
+<td><p>2915.13 ± 23.33</p></td>
+</tr>
+<tr class="row-even"><td><p>350</p></td>
+<td><p>3340.72 ± 37.98</p></td>
+<td><p>4910.78 ± 16.51</p></td>
+<td><p>7589.91 ± 38.95</p></td>
+</tr>
+<tr class="row-odd"><td><p>500</p></td>
+<td><p>5080.23 ± 1.26</p></td>
+<td><p>5590.31 ± 21.81</p></td>
+<td><p>8762.19 ± 35.13</p></td>
+</tr>
+<tr class="row-even"><td><p>750</p></td>
+<td><p>5443.81 ± 0.52</p></td>
+<td><p>7733.0 ± 1.15</p></td>
+<td><p>9262.27 ± 4.45</p></td>
+</tr>
+<tr class="row-odd"><td><p>1000</p></td>
+<td><p>7206.91 ± 3.15</p></td>
+<td><p>8583.17 ± 0.47</p></td>
+<td><p>18092.9 ± 1.83</p></td>
+</tr>
+<tr class="row-even"><td><p>1500</p></td>
+<td><p>12691.36 ± 2.56</p></td>
+<td><p>15860.91 ± 23.84</p></td>
+<td><p>22979.2 ± 214.02</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 
         </article>
       </div>
@@ -441,8 +560,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Performances</a><ul>
+<li><a class="reference internal" href="#time">Time</a></li>
+<li><a class="reference internal" href="#memory">Memory</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

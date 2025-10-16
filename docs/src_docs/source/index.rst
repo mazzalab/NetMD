@@ -111,5 +111,5 @@ Contents
    quickstart
    quickstart_example
    quickstart_notebook
-   time_performance
+   performance
    reference_manual
